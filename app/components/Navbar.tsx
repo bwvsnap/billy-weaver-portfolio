@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import ContactBtn from './ContactBtn';
 import NavLink from './NavLink';
-import styles from './Navbar.module.css'; // Import your stylesheet here
+import styles from './Navbar.module.css';
 
 const navLinks = [
     { href: '/about', label: 'ABOUT' },
@@ -18,7 +18,6 @@ const Navbar = () => {
 
     useEffect(() => {
         if (isOpen) {
-            // Set a timeout to change the state after the CSS transition (1s) and additional delay (1s)
             const timer = setTimeout(() => {
                 setTextDelay(true);
             }, 800);
@@ -30,14 +29,11 @@ const Navbar = () => {
     }, [isOpen]);
 
     const handleClick = () => {
-        // Check if the screen width is less than or equal to 640px for small screens
         if (window.innerWidth <= 640) {
-            // Apply a delay of 1 second before setting isOpen to false
             setTimeout(() => {
                 setIsOpen(false);
             }, 200);
         } else {
-            // For larger screens, set isOpen to false immediately
             setIsOpen(false);
         }
     };

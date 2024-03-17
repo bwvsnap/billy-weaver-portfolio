@@ -1,10 +1,9 @@
-/* Base styles for links and text */
-
 .navMenu {
     visibility: hidden;
     opacity: 0;
     transition: opacity 1s, visibility 1s;
 }
+
 .navMenu:not(.open) {
     transition-delay: 0.4s;
 }
@@ -35,18 +34,17 @@
 }
 
 .navMenu.open .clonedText {
-    transform: translateY(100%); /* Original position */
+    transform: translateY(100%);
 }
 
 .navMenu .originalText {
-    transform: translateY(100%); /* Original position */
+    transform: translateY(100%);
 }
 
 .navMenu.open .originalTextOpened {
-    transform: translateY(0%); /* Rise up */
+    transform: translateY(0%);
 }
 
-/* Adjusted for hover animation not to be blocked */
 .navMenu.open .link:hover .originalText {
     transform: translateY(-100%);
 }
