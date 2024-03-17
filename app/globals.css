@@ -20,7 +20,3 @@
         opacity: 1;
     }
 }
-
-.RollingHover:hover .title {
-    transform: translateY(-20px); /* Move the title up on hover */
-}

@@ -41,10 +41,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} ${monument.variable} bg-black text-gray-100`}
+                className={`${inter.className} ${monument.variable} bg-black text-gray-100 `}
             >
                 <Navbar />
-                {children}
+                <main className="pt-[130px]"> {children}</main>
             </body>
         </html>
     );

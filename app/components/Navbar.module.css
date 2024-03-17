@@ -1,0 +1,56 @@
+/* Base styles for links and text */
+
+.navMenu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 1s;
+}
+.navMenu:not(.open) {
+    transition-delay: 0.4s;
+}
+
+.navMenu.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.link {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+}
+
+.text {
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.clonedText {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: translateY(200%);
+}
+
+.navMenu.open .clonedText {
+    transform: translateY(100%); /* Original position */
+}
+
+.navMenu .originalText {
+    transform: translateY(100%); /* Original position */
+}
+
+.navMenu.open .originalTextOpened {
+    transform: translateY(0%); /* Rise up */
+}
+
+/* Adjusted for hover animation not to be blocked */
+.navMenu.open .link:hover .originalText {
+    transform: translateY(-100%);
+}
+
+.navMenu.open .link:hover .clonedText {
+    transform: translateY(0%);
+}
