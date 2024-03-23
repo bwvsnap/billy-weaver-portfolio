@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
-import ContactBtn from './ContactBtn';
 import NavLink from './NavLink';
 import styles from './Navbar.module.css';
+import InternalLink from './InternalLink';
+import MenuBtn from './MenuBtn';
 
 const navLinks = [
     { href: '/about', label: 'ABOUT' },
@@ -64,54 +65,50 @@ const Navbar = () => {
                         : styles.overlayFadeOut
                 }`}
             ></div>
-                isOpen ? '' : 'pointer-events-none'
-            }`}
-        >
-            <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto"
+            <nav
+                className={`fixed w-full flex justify-between items-center p-9 bg-transparent ${
+                    isOpen ? '' : 'pointer-events-none'
+                }`}
             >
-                BILLY WEAVER
-            </Link>
-            <div className="flex items-center z-50">
-                <div className="hidden md:flex pointer-events-auto">
-                    <ContactBtn />
-                </div>
-
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="block z-50 pointer-events-auto"
+                <Link
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    className="font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto"
                 >
-                    {isOpen ? (
-                        <HiOutlineX className="text-2xl md:text-3xl" />
-                    ) : (
-                        <HiOutlineMenuAlt4 className="text-2xl md:text-3xl" />
-                    )}
-                </button>
-            </div>
-            <div
-                className={`${styles.navMenu} ${
-                    isOpen ? styles.open : ''
-                } fixed inset-0 h-screen bg-black flex flex-row justify-center items-center z-40 `}
-            >
-                <div className="space-y-8 flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
-                    {navLinks.map((link, index) => (
-                        <div
-                            key={index}
-                            onClick={() => handleClick()}
-                            className={`${styles.linkContainer}  cursor-pointer`}
-                        >
-                            <NavLink
-                                text={link.label}
-                                href={link.href}
-                                delay={textDelay}
-                            />
-                        </div>
-                    ))}
+                    BILLY WEAVER
+                </Link>
+                <div className="flex items-center z-50  pointer-events-auto">
+                    <div className="hidden md:flex mr-5">
+                        <InternalLink href="/contact" text="CONTACT" />
+                    </div>
+
+                    <MenuBtn
+                        isOpen={isOpen}
+                        onClick={() => setIsOpen(!isOpen)}
+                    />
                 </div>
-            </div>
-        </nav>
+                <div
+                    className={`${styles.navMenu} ${
+                        isOpen ? styles.open : ''
+                    } fixed inset-0 h-screen bg-black flex flex-row justify-center items-center z-40 `}
+                >
+                    <div className="space-y-8 flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
+                        {navLinks.map((link, index) => (
+                            <div
+                                key={index}
+                                onClick={() => handleClick()}
+                                className={`${styles.linkContainer}  cursor-pointer`}
+                            >
+                                <NavLink
+                                    text={link.label}
+                                    href={link.href}
+                                    delay={textDelay}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </nav>
         </>
     );
 };
