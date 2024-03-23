@@ -109,7 +109,13 @@ const Navbar = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row gap-3 md:gap-8 flex-wrap ">
+                    <div
+                        className={` ${
+                            textDelay
+                                ? styles.externalLinkFadeIn
+                                : styles.externalLinkFadeOut
+                        }  flex flex-row gap-3 md:gap-8 flex-wrap `}
+                    >
                         <ExternalLink
                             href="https://www.instagram.com/billyweavervisuals/"
                             text="INSTAGRAM"

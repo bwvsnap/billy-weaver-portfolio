@@ -73,11 +73,16 @@
 
 .overlayFadeIn {
     opacity: 0;
-    animation: fadeInAnimation ease 1s;
+    animation: overlayFadeInAnimation ease 1s;
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeInAnimation {
+.overlayFadeOut {
+    animation: overlayFadeOutAnimation ease 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes overlayFadeInAnimation {
     0% {
         opacity: 0;
     }
@@ -86,14 +91,38 @@
     }
 }
 
-.overlayFadeOut {
-    animation: fadeOutAnimation ease 1s;
+@keyframes overlayFadeOutAnimation {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.externalLinkFadeIn {
+    opacity: 0;
+    animation: externalLinkFadeInAnimation ease 0.4s;
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeOutAnimation {
+.externalLinkFadeOut {
+    animation: externalLinkFadeOutAnimation ease 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes externalLinkFadeInAnimation {
     0% {
-        opacity: 0.8;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes externalLinkFadeOutAnimation {
+    0% {
+        opacity: 1;
     }
     100% {
         opacity: 0;
