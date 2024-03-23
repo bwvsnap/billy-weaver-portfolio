@@ -15,6 +15,21 @@ const navLinks = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [textDelay, setTextDelay] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
+        handleScroll();
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         if (isOpen) {
@@ -39,8 +54,16 @@ const Navbar = () => {
     };
 
     return (
-        <nav
-            className={`fixed w-full flex justify-between items-center p-9 bg-transparent ${
+        <>
+            <div
+                className={`fixed w-screen left-0 h-36 pointer-events-none top-0 z-0 ${
+                    styles.overlayGradient
+                } ${
+                    scrollPosition > 0
+                        ? styles.overlayFadeIn
+                        : styles.overlayFadeOut
+                }`}
+            ></div>
                 isOpen ? '' : 'pointer-events-none'
             }`}
         >
@@ -89,6 +112,7 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
+        </>
     );
 };
 
