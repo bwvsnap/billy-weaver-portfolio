@@ -14,12 +14,9 @@ const MenuBtn: React.FC<MenuBtnProps> = ({ isOpen, onClick }) => {
         >
             <div className="flex justify-between items-center mix-blend-difference">
                 {isOpen ? (
-                    <HiOutlineX className="text-2xl md:text-3xl" size={25} />
+                    <HiOutlineX className="text-2xl" />
                 ) : (
-                    <HiOutlineMenuAlt4
-                        className="text-2xl md:text-3xl"
-                        size={25}
-                    />
+                    <HiOutlineMenuAlt4 className="text-2xl" />
                 )}
             </div>
         </button>

@@ -11,11 +11,13 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, text }) => {
     return (
         <Link
             href={href}
-            className={`w-30 p-1 pl-3 pr-2 py-2 text-md font-light rounded-3xl border border-gray-100 before:bg-gray-100 ${styles.linkContainer} overflow-hidden`}
+            className={`p-1 pl-2 md:pl-3 md:pr-2  md:py-2 text-xs md:text-base font-light rounded-3xl border border-gray-100 before:bg-gray-100 ${styles.linkContainer} overflow-hidden`}
         >
             <div className="flex justify-between items-center mix-blend-difference">
                 <div>{text}</div>
-                <MdArrowOutward size={25} className={`${styles.arrow} ml-3`} />
+                <MdArrowOutward
+                    className={`${styles.arrow} ml-1 md:ml-3 text-[25] text-lg md:text-2xl`}
+                />
             </div>
         </Link>
     );
