@@ -6,9 +6,11 @@ import NavLink from './NavLink';
 import styles from './Navbar.module.css';
 import InternalLink from './InternalLink';
 import MenuBtn from './MenuBtn';
+import ExternalLink from './ExternalLink';
 
 const navLinks = [
-    { href: '/about', label: 'ABOUT' },
+    { href: '/', label: 'HOME' },
+    { href: '/about', label: 'ABOUT ME' },
     { href: '/portfolio', label: 'PORTFOLIO' },
     { href: '/contact', label: 'CONTACT' }
 ];
@@ -90,9 +92,9 @@ const Navbar = () => {
                 <div
                     className={`${styles.navMenu} ${
                         isOpen ? styles.open : ''
-                    } fixed inset-0 h-screen bg-black flex flex-row justify-center items-center z-40 `}
+                    } fixed inset-0 h-screen bg-black flex flex-col justify-center items-center z-40 `}
                 >
-                    <div className="space-y-8 flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
+                    <div className="space-y-8 mb-20 md:my-16  flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
                         {navLinks.map((link, index) => (
                             <div
                                 key={index}
@@ -106,6 +108,17 @@ const Navbar = () => {
                                 />
                             </div>
                         ))}
+                    </div>
+                    <div className="flex flex-row gap-3 md:gap-8 flex-wrap ">
+                        <ExternalLink
+                            href="https://www.instagram.com/billyweavervisuals/"
+                            text="INSTAGRAM"
+                        />
+                        <ExternalLink
+                            href="https://www.linkedin.com/in/billy-weaver-049934152/"
+                            text="LINKEDIN"
+                        />
+                        <ExternalLink href="/" text="YOUTUBE" />
                     </div>
                 </div>
             </nav>
