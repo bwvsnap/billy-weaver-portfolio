@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { GalleryTag } from './GalleryTag';
 import { MediaItem } from '../interfaces/mediaItem';
+import Lightbox from './Lightbox';
 
 interface GalleryProps {
     mediaItems: MediaItem[];
@@ -12,14 +13,16 @@ interface GalleryProps {
 export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
     const [activeTag, setActiveTag] = useState<string>('All');
     const [columnCount, setColumnCount] = useState<number>(4);
+    const [lightboxActive, setLightboxActive] = useState<boolean>(false);
+    const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
+        null
+    );
 
     useEffect(() => {
         const updateColumnCount = () => {
             setColumnCount(window.innerWidth < 768 ? 2 : 4);
         };
-
         updateColumnCount();
-
         window.addEventListener('resize', updateColumnCount);
         return () => window.removeEventListener('resize', updateColumnCount);
     }, []);
@@ -27,6 +30,16 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
     const filteredMedia = mediaItems.filter((item) =>
         activeTag === 'All' ? true : item.tags.includes(activeTag)
     );
+
+    const handleImageClick = (index: number) => {
+        setLightboxActive(true);
+        setSelectedItemIndex(index);
+    };
+
+    const closeLightbox = () => {
+        setLightboxActive(false);
+        setSelectedItemIndex(null);
+    };
 
     function getColumns(colIndex: number) {
         return filteredMedia.filter(
@@ -51,7 +64,6 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                     />
                 ))}
             </div>
-
             <div className="w-full px-5 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 {Array.from({ length: columnCount }, (_, colIndex) => (
                     <div key={colIndex} className="flex flex-col gap-4">
@@ -59,6 +71,11 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                             <div
                                 key={idx}
                                 className="w-full inline-block cursor-pointer"
+                                onClick={() =>
+                                    handleImageClick(
+                                        filteredMedia.indexOf(item)
+                                    )
+                                }
                             >
                                 <Image
                                     src={item.thumbnail ?? item.src}
@@ -66,7 +83,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                         ', '
                                     )}`}
                                     width={500}
-                                    height={500}
+                                    height={1000}
                                     layout="responsive"
                                     className="w-full h-auto"
                                     quality={50}
@@ -78,6 +95,14 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                     </div>
                 ))}
             </div>
+
+            {lightboxActive && (
+                <Lightbox
+                    filteredMedia={filteredMedia}
+                    selectedItemIndex={selectedItemIndex}
+                    onClick={closeLightbox}
+                />
+            )}
         </>
     );
 };
