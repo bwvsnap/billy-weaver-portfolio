@@ -15,7 +15,7 @@ const InternalLink: React.FC<InternalLinkProps> = ({ href, text }) => {
         >
             <div className="flex justify-between items-center mix-blend-difference">
                 <div>{text}</div>
-                <div className="overflow-hidden  ml-3">
+                <div className="overflow-hidden">
                     {' '}
                     <MdArrowForward
                         className={`${styles.arrow} ml-1 md:ml-3 text-[25] text-lg md:text-2xl`}
