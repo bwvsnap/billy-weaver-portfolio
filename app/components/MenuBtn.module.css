@@ -24,23 +24,3 @@
 .linkContainer:hover::before {
     height: calc(100% + 20px);
 }
-
-.linkContainer:hover .arrow {
-    animation: moveArrow 0.3s forwards;
-}
-
-@keyframes moveArrow {
-    0% {
-        transform: translate(0%, 0%);
-    }
-    49% {
-        transform: translate(100%, 0%);
-    }
-    50% {
-        transform: translate(-100%, 0%);
-    }
-
-    100% {
-        transform: translate(0%, 0%);
-    }
-}
