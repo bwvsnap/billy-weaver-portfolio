@@ -1,13 +1,13 @@
-import { MdArrowOutward } from 'react-icons/md';
+import { MdArrowForward } from 'react-icons/md';
 import Link from 'next/link';
-import styles from './ExternalLink.module.css';
+import styles from './InternalLink.module.css';
 
-interface ExternalLinkProps {
+interface InternalLinkProps {
     href: string;
     text: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ href, text }) => {
+const InternalLink: React.FC<InternalLinkProps> = ({ href, text }) => {
     return (
         <Link
             href={href}
@@ -15,10 +15,13 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, text }) => {
         >
             <div className="flex justify-between items-center mix-blend-difference">
                 <div>{text}</div>
-                <MdArrowOutward size={25} className={`${styles.arrow} ml-3`} />
+                <div className="overflow-hidden  ml-3">
+                    {' '}
+                    <MdArrowForward size={25} className={`${styles.arrow}`} />
+                </div>
             </div>
         </Link>
     );
 };
 
-export default ExternalLink;
+export default InternalLink;
