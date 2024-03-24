@@ -22,16 +22,21 @@ const Lightbox: FC<LightboxProps> = ({
         // Enable navigation and pagination
         modules: [Navigation, Pagination],
         spaceBetween: 30,
-        pagination: { clickable: true },
+
         // Start at the selected index
         initialSlide: selectedItemIndex ?? 0
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center bg-black bg-opacity-95 p-5">
+        <div className="fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center bg-black bg-opacity-95 py-5 md:p-5">
             <Swiper className="w-full h-full " {...swiperOptions}>
                 {filteredMedia.map((item, index) => (
-                    <SwiperSlide className="flex relative p-10" key={index}>
+                    <SwiperSlide
+                        className={`flex relative py-12 ${
+                            item.type === 'video' ? 'py-32' : ''
+                        } md:py-10 md:p-10`}
+                        key={index}
+                    >
                         <div className="relative w-full h-full ">
                             {item.type === 'image' ? (
                                 <Image
