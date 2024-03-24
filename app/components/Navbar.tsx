@@ -68,7 +68,7 @@ const Navbar = () => {
                 }`}
             ></div>
             <nav
-                className={`fixed w-full flex justify-between items-center p-9 bg-transparent ${
+                className={`fixed w-full flex justify-between items-center p-9 bg-transparent z-50 ${
                     isOpen ? '' : 'pointer-events-none'
                 }`}
             >
@@ -81,7 +81,7 @@ const Navbar = () => {
                 </Link>
                 <div className="flex items-center z-50  pointer-events-auto">
                     <div className="hidden md:flex mr-5">
-                        <InternalLink href="/contact" text="CONTACT" />
+                        <InternalLink href="/contact" text="Let's Talk" />
                     </div>
 
                     <MenuBtn
@@ -118,13 +118,13 @@ const Navbar = () => {
                     >
                         <ExternalLink
                             href="https://www.instagram.com/billyweavervisuals/"
-                            text="INSTAGRAM"
+                            text="Instagram"
                         />
                         <ExternalLink
                             href="https://www.linkedin.com/in/billy-weaver-049934152/"
-                            text="LINKEDIN"
+                            text="LinkedIn"
                         />
-                        <ExternalLink href="/" text="YOUTUBE" />
+                        <ExternalLink href="/" text="Youtube" />
                     </div>
                 </div>
             </nav>
