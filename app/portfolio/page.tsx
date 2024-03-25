@@ -73,5 +73,9 @@ export default async function PortfolioPage() {
         })
     );
 
-    return <Gallery mediaItems={mediaItems} allTags={allTags} />;
+    return (
+        <div className="pt-[130px]">
+            <Gallery mediaItems={mediaItems} allTags={allTags} />
+        </div>
+    );
 }

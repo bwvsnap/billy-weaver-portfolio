@@ -68,7 +68,7 @@ const Navbar = () => {
                 }`}
             ></div>
             <nav
-                className={`fixed w-full flex justify-between items-center p-9 bg-transparent z-50 ${
+                className={`fixed w-full flex justify-between items-center px-5 py-9 md:p-9 bg-transparent z-50 ${
                     isOpen ? '' : 'pointer-events-none'
                 }`}
             >

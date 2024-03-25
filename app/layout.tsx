@@ -44,7 +44,7 @@ export default function RootLayout({
                 className={`${inter.className} ${monument.variable} bg-black text-gray-100 `}
             >
                 <Navbar />
-                <main className="pt-[130px]"> {children}</main>
+                <main className=""> {children}</main>
             </body>
         </html>
     );
