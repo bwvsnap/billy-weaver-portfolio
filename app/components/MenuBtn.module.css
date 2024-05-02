@@ -1,14 +1,14 @@
-.linkContainer {
+.btnContents {
     position: relative;
     overflow: hidden;
     transition: 0.3s ease;
 }
 
-.linkContainer:hover {
+button:hover .btnContents {
     transform: scale(0.93);
 }
 
-.linkContainer::before {
+.btnContents::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -21,6 +21,6 @@
     overflow: hidden;
 }
 
-.linkContainer:hover::before {
+button:hover .btnContents::before {
     height: calc(100% + 20px);
 }

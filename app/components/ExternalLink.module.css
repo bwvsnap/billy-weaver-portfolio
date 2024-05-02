@@ -1,14 +1,14 @@
-.linkContainer {
+.linkContents {
     position: relative;
     overflow: hidden;
     transition: 0.3s ease;
 }
 
-.linkContainer:hover {
+.link:hover .linkContents {
     transform: scale(0.93);
 }
 
-.linkContainer::before {
+.linkContents::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -21,11 +21,11 @@
     overflow: hidden;
 }
 
-.linkContainer:hover::before {
+.link:hover .linkContents::before {
     height: calc(100% + 20px);
 }
 
-.linkContainer:hover .arrow {
+.link:hover .linkContents .arrow {
     animation: moveArrow 0.3s forwards;
 }
 

@@ -8,16 +8,17 @@ interface MenuBtnProps {
 
 const MenuBtn: React.FC<MenuBtnProps> = ({ isOpen, onClick }) => {
     return (
-        <button
-            className={`w-30 p-2 text-md font-medium rounded-3xl border border-gray-100 before:bg-gray-100 ${styles.linkContainer} overflow-hidden`}
-            onClick={onClick}
-        >
-            <div className="flex justify-between items-center mix-blend-difference">
-                {isOpen ? (
-                    <HiOutlineX className="text-2xl" />
-                ) : (
-                    <HiOutlineMenuAlt4 className="text-2xl" />
-                )}
+        <button onClick={onClick}>
+            <div
+                className={`w-30 p-2 text-md font-medium rounded-3xl border border-gray-100 before:bg-gray-100 ${styles.btnContents} overflow-hidden`}
+            >
+                <div className="flex justify-between items-center mix-blend-difference">
+                    {isOpen ? (
+                        <HiOutlineX className="text-2xl" />
+                    ) : (
+                        <HiOutlineMenuAlt4 className="text-2xl" />
+                    )}
+                </div>
             </div>
         </button>
     );
