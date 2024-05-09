@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import NavLink from './NavLink';
 import styles from './Navbar.module.css';
 import InternalLink from './InternalLink';
@@ -10,7 +9,7 @@ import ExternalLink from './ExternalLink';
 
 const navLinks = [
     { href: '/', label: 'HOME' },
-    { href: '/about', label: 'ABOUT ME' },
+    { href: '/about', label: 'ABOUT' },
     { href: '/portfolio', label: 'PORTFOLIO' },
     { href: '/contact', label: 'CONTACT' }
 ];
@@ -92,9 +91,9 @@ const Navbar = () => {
                 <div
                     className={`${styles.navMenu} ${
                         isOpen ? styles.open : ''
-                    } fixed inset-0 h-screen bg-black flex flex-col justify-center items-center z-40 `}
+                    } fixed inset-0 h-screen bg-black flex flex-col justify-between items-center z-40 `}
                 >
-                    <div className="space-y-8 mb-20 md:my-16  flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
+                    <div className="space-y-8 my-auto pt-20  flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
                         {navLinks.map((link, index) => (
                             <div
                                 key={index}
@@ -114,17 +113,26 @@ const Navbar = () => {
                             textDelay
                                 ? styles.externalLinkFadeIn
                                 : styles.externalLinkFadeOut
-                        }  flex flex-row gap-3 md:gap-8 flex-wrap `}
+                        } flex flex-col md:flex-row-reverse w-full px-9 space-y-14 justify-between items-center md:items-end mb-[100px] md:mb-4`}
                     >
-                        <ExternalLink
-                            href="https://www.instagram.com/billyweavervisuals/"
-                            text="Instagram"
-                        />
-                        <ExternalLink
-                            href="https://www.linkedin.com/in/billy-weaver-049934152/"
-                            text="LinkedIn"
-                        />
-                        <ExternalLink href="/" text="Youtube" />
+                        <div className="flex flex-row gap-3 md:gap-4 flex-wrap justify-center md:justify-end items-center">
+                            <ExternalLink
+                                href="https://www.instagram.com/billyweavervisuals/"
+                                text="Instagram"
+                            />
+                            <ExternalLink
+                                href="https://www.linkedin.com/in/billy-weaver-049934152/"
+                                text="LinkedIn"
+                            />
+                            <ExternalLink href="/" text="Youtube" />
+                        </div>
+
+                        <p className="text-center  md:text-start text-sm font-light">
+                            © 2024 Billy Weaver /{' '}
+                            <Link href={'www.roryholmes.com'}>
+                                Website by Rory
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </nav>
