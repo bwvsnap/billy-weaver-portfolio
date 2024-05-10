@@ -127,10 +127,13 @@ const Navbar = () => {
                             <ExternalLink href="/" text="Youtube" />
                         </div>
 
-                        <p className="text-center  md:text-start text-sm font-light">
+                        <p className=" text-gray-200/50 text-center  md:text-start text-sm font-light">
                             © 2024 Billy Weaver /{' '}
-                            <Link href={'www.roryholmes.com'}>
-                                Website by Rory
+                            <Link
+                                className="hover:text-gray-100 transition-colors duration-300"
+                                href={'http://www.roryholmes.com'}
+                            >
+                                Website by Rory Holmes
                             </Link>
                         </p>
                     </div>
