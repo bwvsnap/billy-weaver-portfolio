@@ -13,7 +13,7 @@ export const GalleryTag: React.FC<GalleryTagProps> = ({
 
     return (
         <button
-            className={`w-30 p-1 px-4 m-2 md:m-6 text-md font-light rounded-3xl bg-transparent border ${
+            className={`w-30 p-1 px-4 m-2 md:m-6 text-md font-light rounded-3xl bg-transparent border hover:border-orange-500 hover:text-orange-500 transition-colors duration-300 ${
                 isActive
                     ? 'border-orange-500 text-orange-500'
                     : 'border-gray-100 text-gray-100'
