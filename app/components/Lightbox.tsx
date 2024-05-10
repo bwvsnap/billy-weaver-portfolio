@@ -3,9 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, Navigation, Pagination } from 'swiper/modules';
 import { MediaItem } from '../interfaces/mediaItem';
-import { FC } from 'react';
+import { FC, SetStateAction, useRef, useState } from 'react';
+import {
+    PrevButton,
+    NextButton,
+    CloseButton,
+    CountWidget
+} from './LightboxWidgets';
 
 interface LightboxProps {
     filteredMedia: MediaItem[];
@@ -18,17 +24,27 @@ const Lightbox: FC<LightboxProps> = ({
     selectedItemIndex,
     onClick
 }) => {
+    const [currentSlide, setCurrentSlide] = useState<number>(
+        selectedItemIndex ?? 0
+    );
+
     const swiperOptions = {
         // Enable navigation and pagination
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Keyboard],
         spaceBetween: 30,
+        loop: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
 
-        // Start at the selected index
-        initialSlide: selectedItemIndex ?? 0
+        initialSlide: selectedItemIndex ?? 0,
+        onSlideChange: (swiper: { realIndex: SetStateAction<number> }) =>
+            setCurrentSlide(swiper.realIndex)
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center bg-black bg-opacity-95 py-5 md:p-5">
+        <div className="fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center bg-black  py-5 md:p-5">
             <Swiper className="w-full h-full " {...swiperOptions}>
                 {filteredMedia.map((item, index) => (
                     <SwiperSlide
@@ -46,6 +62,7 @@ const Lightbox: FC<LightboxProps> = ({
                                     )}`}
                                     layout="fill"
                                     objectFit="contain"
+                                    quality={100}
                                 />
                             ) : (
                                 <iframe
@@ -59,13 +76,21 @@ const Lightbox: FC<LightboxProps> = ({
                         </div>
                     </SwiperSlide>
                 ))}
+
+                {/* Widgets */}
+                <div>
+                    <CountWidget
+                        total={filteredMedia.length}
+                        currentIdx={currentSlide}
+                    />
+                    <CloseButton onClick={onClick} />
+
+                    <div className="hidden md:block">
+                        <NextButton />
+                        <PrevButton />
+                    </div>
+                </div>
             </Swiper>
-            <button
-                className="absolute top-0 right-0 m-4 text-white z-50"
-                onClick={onClick}
-            >
-                Close
-            </button>
         </div>
     );
 };
