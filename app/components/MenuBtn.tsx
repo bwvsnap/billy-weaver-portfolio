@@ -1,5 +1,5 @@
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
-import styles from './MenuBtn.module.css';
+import styles from './Button.module.css';
 
 interface MenuBtnProps {
     isOpen: boolean;
