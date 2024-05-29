@@ -87,7 +87,9 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                     layout="responsive"
                                     className="w-full h-auto"
                                     quality={50}
-                                    placeholder="blur"
+                                    placeholder={
+                                        item.blurDataURL ? 'blur' : 'empty'
+                                    }
                                     blurDataURL={item.blurDataURL}
                                 />
                             </div>

@@ -23,9 +23,11 @@ const generateMediaItems = async (): Promise<MediaItem[]> => {
             }
         }
 
+        const randomImageIndex = Math.floor(Math.random() * 18) + 1;
+
         const mediaItem: MediaItem = {
             type: 'image',
-            src: 'https://source.unsplash.com/collection/8858705?' + i,
+            src: `/images/portfolio/image${randomImageIndex}.jpg`,
             tags: selectedTags
         };
         mediaItems.push(mediaItem);
@@ -41,11 +43,11 @@ const generateMediaItems = async (): Promise<MediaItem[]> => {
             'https://i.vimeocdn.com/video/695043548-885bab3819a63ebcabdfba41a496c24351a4c824957f40916917b7431c89e1c4-d_640xauto'
         ]
     ];
-    videoIds.forEach((id, index) => {
+    videoIds.forEach((id) => {
         const selectedTags: string[] = ['Cinematography'];
         mediaItems.push({
             type: 'video',
-            src: id[0],
+            src: `https://vimeo.com/${id[0]}`,
             tags: selectedTags,
             thumbnail: id[1]
         });
@@ -54,28 +56,37 @@ const generateMediaItems = async (): Promise<MediaItem[]> => {
     return mediaItems;
 };
 
-export default async function PortfolioPage() {
-    let mediaItems = await generateMediaItems();
-
-    mediaItems = await Promise.all(
+const processMediaItems = async (
+    mediaItems: MediaItem[]
+): Promise<MediaItem[]> => {
+    return await Promise.all(
         mediaItems.map(async (item) => {
-            const buffer = await fetch(item.thumbnail ?? item.src).then(
-                async (res) => {
-                    if (!res.ok) {
-                        const errorText = await res.text();
-                        throw new Error(
-                            `Failed to fetch image: ${res.status} ${res.statusText}. ${errorText}`
-                        );
+            if (item.type === 'video') {
+                const buffer = await fetch(item.thumbnail ?? item.src).then(
+                    async (res) => {
+                        if (!res.ok) {
+                            const errorText = await res.text();
+                            throw new Error(
+                                `Failed to fetch video thumbnail: ${res.status} ${res.statusText}. ${errorText}`
+                            );
+                        }
+                        return Buffer.from(await res.arrayBuffer());
                     }
-                    return Buffer.from(await res.arrayBuffer());
-                }
-            );
+                );
 
-            const { base64 } = await getPlaiceholder(buffer);
-            return { ...item, blurDataURL: base64 };
+                const { base64 } = await getPlaiceholder(buffer);
+                return { ...item, blurDataURL: base64 };
+            }
+
+            // For local images, return the item as is
+            return item;
         })
     );
+};
 
+export default async function PortfolioPage() {
+    let mediaItems = await generateMediaItems();
+    mediaItems = await processMediaItems(mediaItems);
     return (
         <div className="pt-[130px]">
             <Gallery mediaItems={mediaItems} allTags={allTags} />
