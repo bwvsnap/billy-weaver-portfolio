@@ -62,7 +62,10 @@ export default async function PortfolioPage() {
             const buffer = await fetch(item.thumbnail ?? item.src).then(
                 async (res) => {
                     if (!res.ok) {
-                        throw new Error('Failed to fetch image.');
+                        const errorText = await res.text();
+                        throw new Error(
+                            `Failed to fetch image: ${res.status} ${res.statusText}. ${errorText}`
+                        );
                     }
                     return Buffer.from(await res.arrayBuffer());
                 }
