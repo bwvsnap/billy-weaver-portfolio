@@ -34,15 +34,15 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        document.body.classList.toggle('overflow-hidden');
-
         if (isOpen) {
+            document.body.classList.add('overflow-hidden');
             const timer = setTimeout(() => {
                 setTextDelay(true);
             }, 800);
 
             return () => clearTimeout(timer);
         } else {
+            document.body.classList.remove('overflow-hidden');
             setTextDelay(false);
         }
     }, [isOpen]);

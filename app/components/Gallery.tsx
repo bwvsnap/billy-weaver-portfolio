@@ -24,6 +24,9 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
         };
         updateColumnCount();
         window.addEventListener('resize', updateColumnCount);
+
+        document.body.classList.remove('overflow-hidden');
+
         return () => window.removeEventListener('resize', updateColumnCount);
     }, []);
 
