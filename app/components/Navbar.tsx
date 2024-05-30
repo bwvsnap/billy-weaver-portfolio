@@ -34,6 +34,8 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
+        document.body.classList.toggle('overflow-hidden');
+
         if (isOpen) {
             const timer = setTimeout(() => {
                 setTextDelay(true);

@@ -32,11 +32,13 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
     );
 
     const handleImageClick = (index: number) => {
+        document.body.classList.add('overflow-hidden');
         setLightboxActive(true);
         setSelectedItemIndex(index);
     };
 
     const closeLightbox = () => {
+        document.body.classList.remove('overflow-hidden');
         setLightboxActive(false);
         setSelectedItemIndex(null);
     };
