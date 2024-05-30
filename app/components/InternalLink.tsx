@@ -13,7 +13,7 @@ const InternalLink: React.FC<InternalLinkProps> = ({ href, text }) => {
             <div
                 className={`p-1 pl-2 md:pl-3 md:pr-2  md:py-2 text-xs md:text-base font-light rounded-3xl border border-gray-100 before:bg-gray-100 ${styles.linkContents} overflow-hidden`}
             >
-                <div className="flex justify-between items-center mix-blend-difference">
+                <div className="flex justify-between items-center mix-blend-difference text-gray-100">
                     <p>{text}</p>
                     <div className="overflow-hidden">
                         {' '}
