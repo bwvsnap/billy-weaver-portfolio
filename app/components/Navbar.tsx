@@ -1,11 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import NavLink from './NavLink';
+import { NavLink, ShopNavLink } from './NavLink';
 import styles from './Navbar.module.css';
 import InternalLink from './InternalLink';
 import MenuBtn from './MenuBtn';
 import ExternalLink from './ExternalLink';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
     { href: '/', label: 'HOME' },
@@ -60,7 +61,7 @@ const Navbar = () => {
     return (
         <>
             <div
-                className={`fixed w-screen left-0 h-36 pointer-events-none top-0 z-0 ${
+                className={`fixed w-screen left-0 h-36 pointer-events-none top-0 z-[49] ${
                     styles.overlayGradient
                 } ${
                     scrollPosition > 0
@@ -76,13 +77,21 @@ const Navbar = () => {
                 <Link
                     href="/"
                     onClick={() => setIsOpen(false)}
-                    className="font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto"
+                    className="hover:scale-95 hover:-translate-y-1 duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
                 >
                     BILLY WEAVER
                 </Link>
+
                 <div className="flex items-center z-50  pointer-events-auto">
-                    <div className="hidden md:flex mr-5">
-                        <InternalLink href="/contact" text="Let's Talk" />
+                    <div
+                        className="hidden md:flex mr-5"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        <InternalLink
+                            href="/contact"
+                            text="Let's Talk"
+                            large={false}
+                        />
                     </div>
 
                     <MenuBtn
@@ -93,7 +102,7 @@ const Navbar = () => {
                 <div
                     className={`${styles.navMenu} ${
                         isOpen ? styles.open : ''
-                    } fixed inset-0 h-screen bg-black flex flex-col justify-between items-center z-40 `}
+                    } fixed inset-0 h-screen bg-[#0b0b0b] flex flex-col justify-between items-center z-40 `}
                 >
                     <div className="space-y-8 my-auto pt-20  flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
                         {navLinks.map((link, index) => (
@@ -109,6 +118,16 @@ const Navbar = () => {
                                 />
                             </div>
                         ))}
+                        <div
+                            onClick={() => handleClick()}
+                            className={`${styles.linkContainer}  cursor-pointer`}
+                        >
+                            <ShopNavLink
+                                text="SHOP"
+                                href="/shop"
+                                delay={textDelay}
+                            />
+                        </div>
                     </div>
                     <div
                         className={` ${
@@ -121,12 +140,18 @@ const Navbar = () => {
                             <ExternalLink
                                 href="https://www.instagram.com/billyweavervisuals/"
                                 text="Instagram"
+                                large={false}
                             />
                             <ExternalLink
                                 href="https://www.linkedin.com/in/billy-weaver-049934152/"
                                 text="LinkedIn"
+                                large={false}
                             />
-                            <ExternalLink href="/" text="Youtube" />
+                            <ExternalLink
+                                href="/"
+                                text="Youtube"
+                                large={false}
+                            />
                         </div>
 
                         <p className=" text-gray-200/50 text-center  md:text-start text-sm font-light">
