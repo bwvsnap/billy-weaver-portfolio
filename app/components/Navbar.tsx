@@ -134,7 +134,7 @@ const Navbar = () => {
                             textDelay
                                 ? styles.externalLinkFadeIn
                                 : styles.externalLinkFadeOut
-                        } flex flex-col md:flex-row-reverse w-full px-9 space-y-14 justify-between items-center md:items-end mb-[100px] md:mb-4`}
+                        } flex flex-col md:flex-row-reverse w-full px-1 md:px-9 space-y-10 justify-between items-center md:items-end mb-[100px] md:mb-4`}
                     >
                         <div className="flex flex-row gap-3 md:gap-4 flex-wrap justify-center md:justify-end items-center">
                             <ExternalLink
