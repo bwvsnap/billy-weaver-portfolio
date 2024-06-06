@@ -36,22 +36,20 @@ const FeaturedWork = () => {
             <h2 className="font-monument text-2xl md:text-6xl mb-20 w-full font-bold">
                 FEATURED WORK
             </h2>
-            <div className="grid-container w-[95vw] h-[142.5vw] md:w-[95vw] md:h-[63.3vw] z-[-1] mb-20 md:mb-32">
-                <div className="grid grid-cols-2 grid-flow-row md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 h-full w-full">
-                    {images.map((image, index) => (
-                        <div
-                            key={index}
-                            className="relative rounded-2xl overflow-hidden"
-                        >
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-                    ))}
-                </div>
+            <div className="w-full mb-20 md:mb-32 grid grid-cols-2 grid-flow-row md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 ">
+                {images.map((image, index) => (
+                    <div
+                        key={index}
+                        className="relative rounded-2xl aspect-square overflow-hidden"
+                    >
+                        <Image
+                            src={image.src}
+                            alt={image.alt}
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </div>
+                ))}
             </div>
             <div className="w-full flex flex-row justify-start">
                 <InternalLink

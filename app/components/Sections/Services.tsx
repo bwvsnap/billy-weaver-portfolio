@@ -53,8 +53,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     Icon
 }) => {
     return (
-        <div className=" flex flex-col items-center w-[44.5vw] md:w-[22.5vw] space-y-8">
-            <div className="relative overflow-hidden w-full h-[60.23vw]  md:h-[30.5vw]  rounded-xl md:mb-2">
+        <div className=" flex flex-col items-center w-full space-y-8">
+            <div className="relative overflow-hidden w-full aspect-[0.74]  rounded-xl md:mb-2">
                 <Image
                     src={imgUrl}
                     alt={title + ' service card image'}
@@ -65,7 +65,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                     <Icon className="text-5xl md:text-6xl text-gray-100 bg-black/20 backdrop-blur-sm	rounded-full " />
                 </div>
             </div>
-            <div className="flex flex-col  space-y-1 md:space-y-3 justify-center">
+            <div className="flex flex-col space-y-1 md:space-y-3 justify-center w-full">
                 <h3 className="text-lg md:text-3xl font-normal">{title}</h3>
                 <h4 className="text-base md:text-xl text-[#999]">
                     {description}
