@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { getPlaiceholder } from 'plaiceholder';
 import { Gallery } from '../components/Gallery';
 import { MediaItem } from '../interfaces/mediaItem';
 
@@ -24,7 +23,6 @@ export default function PortfolioPage() {
                 return data.files;
             } catch (error) {
                 if (error instanceof Error) {
-                    console.log('hello');
                     setError(error.message);
                 } else {
                     setError('An unknown error occurred');
@@ -34,7 +32,8 @@ export default function PortfolioPage() {
         };
 
         const generateMediaItems = async (): Promise<MediaItem[]> => {
-            const fileUrls = await getFileUrlsFromBucket();
+            let fileUrls = await getFileUrlsFromBucket();
+            fileUrls = Array(5).fill(fileUrls).flat();
             console.log(fileUrls);
             const mediaItems: MediaItem[] = [];
 
