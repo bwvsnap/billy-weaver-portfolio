@@ -12,6 +12,7 @@ import {
     CloseButton,
     CountWidget
 } from './LightboxWidgets';
+import AOS from 'aos';
 
 interface LightboxProps {
     filteredMedia: MediaItem[];
@@ -39,8 +40,9 @@ const Lightbox: FC<LightboxProps> = ({
         },
 
         initialSlide: selectedItemIndex ?? 0,
-        onSlideChange: (swiper: { realIndex: SetStateAction<number> }) =>
-            setCurrentSlide(swiper.realIndex)
+        onSlideChange: (swiper: { realIndex: SetStateAction<number> }) => {
+            setCurrentSlide(swiper.realIndex);
+        }
     };
 
     return (
@@ -53,7 +55,11 @@ const Lightbox: FC<LightboxProps> = ({
                         } md:py-10 md:p-10`}
                         key={index}
                     >
-                        <div className="relative w-full h-full ">
+                        <div
+                            data-aos="zoom-in"
+                            data-aos-duration="2000"
+                            className="relative w-full h-full "
+                        >
                             {item.type === 'image' ? (
                                 <img
                                     src={item.src}
