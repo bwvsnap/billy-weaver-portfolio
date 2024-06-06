@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { GalleryTag } from './GalleryTag';
 import { MediaItem } from '../interfaces/mediaItem';
+import { FaPlay } from 'react-icons/fa';
 import Lightbox from './Lightbox';
 
 interface GalleryProps {
@@ -75,24 +76,34 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                         {getColumns(colIndex).map((item, idx) => (
                             <div
                                 key={idx}
-                                className="w-full inline-block cursor-pointer"
+                                className="w-full relative inline-block cursor-pointer group"
                                 onClick={() =>
                                     handleImageClick(
                                         filteredMedia.indexOf(item)
                                     )
                                 }
                             >
-                                <Image
-                                    src={item.thumbnail ?? item.src}
-                                    alt={`Media with tags: ${item.tags.join(
-                                        ', '
-                                    )}`}
-                                    width={500}
-                                    height={1000}
-                                    layout="responsive"
-                                    className="w-full h-auto rounded-xl"
-                                    quality={50}
-                                />
+                                <div className="relative overflow-hidden rounded-xl">
+                                    <Image
+                                        src={item.thumbnail ?? item.src}
+                                        alt={`Media with tags: ${item.tags.join(
+                                            ', '
+                                        )}`}
+                                        width={500}
+                                        height={1000}
+                                        layout="responsive"
+                                        className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-110"
+                                        quality={50}
+                                    />
+                                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                                </div>
+                                {item.type == 'video' && (
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="rounded-full flex items-center justify-center bg-black/60 p-3 md:p-5 backdrop-blur-sm ">
+                                            <FaPlay className="text-lg md:text-3xl text-gray-100 pl-1" />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
