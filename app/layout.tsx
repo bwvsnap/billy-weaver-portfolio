@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Noto_Sans_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from './components/Navbar';
+import Footer from './components/Sections/Footer';
+import { AosInit } from './components/AosInit';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const noto = Noto_Sans_Mono({ subsets: ['latin'] });
 
 const monument = localFont({
     src: [
@@ -41,10 +45,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} ${monument.variable} bg-black text-gray-100 `}
+                className={`${inter.className}  ${monument.variable} dark bg-[#0b0b0b] text-gray-100 font-light tracking-wide `}
             >
+                <AosInit />
                 <Navbar />
                 <main className=""> {children}</main>
+                <hr className="h-px my-8 bg-gray-100/10 border-0 " />
+                <Footer />
             </body>
         </html>
     );
