@@ -8,7 +8,7 @@ export default function About() {
                 <div className="flex flex-col justify-center items-center space-y-16  w-full h-1/2 md:h-auto ">
                     <h1 className="text-2xl text-center md:text-6xl xl:text-7xl font-semibold font-monument  2xl:text-8xl">
                         {' '}
-                        A BIT ABOUT ME
+                        CAPTURING MOMENTS, CRAFTING STORIES{' '}
                     </h1>
 
                     <div className="flex flex-col-reverse md:flex-row  items-center md:items-stretch justify-between w-full gap-16">
@@ -57,8 +57,16 @@ export default function About() {
                         </div>
                     </div>
                     <div className="flex flex-row w-full  gap-3 md:gap-4 flex-wrap justify-start md:justify-start items-start">
-                        <InternalLink href="/portfolio" text="See My Work" />
-                        <InternalLink href="/contact" text="Get in Touch" />
+                        <InternalLink
+                            href="/portfolio"
+                            text="See My Work"
+                            large={true}
+                        />
+                        <InternalLink
+                            href="/contact"
+                            text="Get in Touch"
+                            large={true}
+                        />
                     </div>
                 </div>
             </div>
