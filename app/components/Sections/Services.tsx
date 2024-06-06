@@ -67,7 +67,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             </div>
             <div className="flex flex-col  space-y-1 md:space-y-3 justify-center">
                 <h3 className="text-lg md:text-3xl font-normal">{title}</h3>
-                <h4 className="text-base md:text-2xl text-[#999]">
+                <h4 className="text-base md:text-xl text-[#999]">
                     {description}
                 </h4>
             </div>
