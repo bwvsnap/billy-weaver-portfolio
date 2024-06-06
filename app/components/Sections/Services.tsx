@@ -62,12 +62,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                     objectFit="cover"
                 />
                 <div className="absolute bottom-0 left-0 p-2">
-                    <Icon className="text-6xl text-gray-100 " />
+                    <Icon className="text-5xl md:text-6xl text-gray-100 bg-black/20 backdrop-blur-sm	rounded-full " />
                 </div>
             </div>
             <div className="flex flex-col  space-y-1 md:space-y-3 justify-center">
-                <h3 className="text-xl md:text-3xl font-normal">{title}</h3>
-                <h4 className="text-lg md:text-2xl text-[#999]">
+                <h3 className="text-lg md:text-3xl font-normal">{title}</h3>
+                <h4 className="text-base md:text-2xl text-[#999]">
                     {description}
                 </h4>
             </div>
