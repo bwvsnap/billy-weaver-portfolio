@@ -90,7 +90,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                     width={500}
                                     height={1000}
                                     layout="responsive"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto rounded-xl"
                                     quality={50}
                                 />
                             </div>
