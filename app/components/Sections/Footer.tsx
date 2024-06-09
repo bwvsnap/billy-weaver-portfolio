@@ -5,11 +5,13 @@ import { MdArrowOutward } from 'react-icons/md';
 import ExternalLink from '../ExternalLink';
 import UnderlineLink from '../UnderlineLink';
 import BackToTop from '../BackToTop';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
     const buttonContainerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         const buttonContainer = buttonContainerRef.current;
@@ -84,33 +86,37 @@ const Footer = () => {
         <>
             <hr className="h-px my-8 w-full bg-stone-100/20 border-0" />
             <div className="w-full max-w-screen-2xl px-2 md:px-10 flex flex-col items-center ">
-                <div className="flex flex-row w-full justify-between items-start p-2 mb-7 md:p-5 md:mb-14">
-                    <h3
-                        className="font-monument font-bold text-2xl md:text-7xl "
-                        ref={textRef}
-                    >
-                        LET&apos;S WORK
-                        <br />
-                        <span className="md:ml-64">TOGETHER</span>
-                    </h3>
-                    <div ref={arrowRef}>
-                        <MdArrowOutward className="rotate-180 text-4xl md:text-9xl md:mr-10 mt-5" />
-                    </div>
-                </div>
+                {pathname !== '/contact' && (
+                    <>
+                        <div className="flex flex-row w-full justify-between items-start p-2 mb-7 md:p-5 md:mb-14">
+                            <h3
+                                className="font-monument font-bold text-2xl md:text-7xl "
+                                ref={textRef}
+                            >
+                                LET&apos;S WORK
+                                <br />
+                                <span className="md:ml-64">TOGETHER</span>
+                            </h3>
+                            <div ref={arrowRef}>
+                                <MdArrowOutward className="rotate-180 text-4xl md:text-9xl md:mr-10 mt-5" />
+                            </div>
+                        </div>
 
-                <div className="w-full flex items-center justify-center mb-10 md:mb-24 relative">
-                    <hr className="h-px my-8 bg-stone-100/20 border-0 w-full mx-3 md:mx-0 md:w-3/4" />
-                    <div className="absolute" ref={buttonContainerRef}>
-                        <Link
-                            className="h-[8.5rem] w-[8.5rem] md:w-44 md:h-44 rounded-full bg-indigo-500 hover:scale-90 transition-all duration-500 flex items-center justify-center"
-                            href={'/contact'}
-                        >
-                            <span className="text-center text-sm md:text-xl">
-                                Get in touch
-                            </span>
-                        </Link>
-                    </div>
-                </div>
+                        <div className="w-full flex items-center justify-center mb-10 md:mb-24 relative">
+                            <hr className="h-px my-8 bg-stone-100/20 border-0 w-full mx-3 md:mx-0 md:w-3/4" />
+                            <div className="absolute" ref={buttonContainerRef}>
+                                <Link
+                                    className="h-[8.5rem] w-[8.5rem] md:w-44 md:h-44 rounded-full bg-indigo-500 hover:scale-90 transition-all duration-500 flex items-center justify-center"
+                                    href={'/contact'}
+                                >
+                                    <span className="text-center text-sm md:text-xl">
+                                        Get in touch
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+                    </>
+                )}
 
                 <div className="flex flex-col md:flex-row w-4/5 mb-4 md:mb-14 justify-between space-y-10 md:space-y-0">
                     <div className="flex flex-col items-start">

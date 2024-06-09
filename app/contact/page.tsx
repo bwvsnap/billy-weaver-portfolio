@@ -20,7 +20,7 @@ export default async function ContactPage() {
 
             <div className="flex flex-col-reverse md:flex-row w-full   md:items-start md:space-x-36">
                 <ContactForm />
-                <div className="flex flex-col mb-12 md:mb-0 md:w-auto justify-start space-y-10 md:space-y-14">
+                <div className="hidden md:flex flex-col mb-12 md:mb-0 md:w-auto justify-start space-y-10 md:space-y-14">
                     <div className="flex flex-col justify-start">
                         <h3 className="mb-3 text-stone-400 text-sm">
                             CONTACT DETAILS
