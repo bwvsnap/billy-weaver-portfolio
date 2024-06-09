@@ -34,7 +34,7 @@ const monument = localFont({
 export const metadata: Metadata = {
     title: 'Billy Weaver',
     description:
-        'Billy Weaver professional photography, videography & editing services'
+        'Billy Weaver - professional photography, videography, sound & editing services'
 };
 
 export default function RootLayout({
@@ -45,13 +45,16 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className}  ${monument.variable} dark bg-[#0b0b0b] text-gray-100 font-light tracking-wide `}
+                className={`${inter.className}  ${monument.variable} dark bg-[#0b0b0b] text-stone-100 font-light tracking-wide `}
             >
-                <AosInit />
-                <Navbar />
-                <main className=""> {children}</main>
-                <hr className="h-px my-8 bg-gray-100/10 border-0 " />
-                <Footer />
+                <div id="smooth-wrapper">
+                    <div id="smooth-content">
+                        <AosInit />
+                        <Navbar />
+                        <main className=""> {children}</main>
+                        <Footer />
+                    </div>
+                </div>
             </body>
         </html>
     );

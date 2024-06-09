@@ -6,7 +6,6 @@ import styles from './Navbar.module.css';
 import InternalLink from './InternalLink';
 import MenuBtn from './MenuBtn';
 import ExternalLink from './ExternalLink';
-import { usePathname } from 'next/navigation';
 
 const navLinks = [
     { href: '/', label: 'HOME' },
@@ -142,22 +141,19 @@ const Navbar = () => {
                                 text="Instagram"
                                 large={false}
                             />
+                            <ExternalLink href="/" text="Vimeo" large={false} />
+
                             <ExternalLink
                                 href="https://www.linkedin.com/in/billy-weaver-049934152/"
                                 text="LinkedIn"
                                 large={false}
                             />
-                            <ExternalLink
-                                href="/"
-                                text="Youtube"
-                                large={false}
-                            />
                         </div>
 
-                        <p className=" text-gray-200/50 text-center  md:text-start text-sm font-light">
+                        <p className=" text-stone-400 text-center  md:text-start text-sm md:text-base">
                             © 2024 Billy Weaver /{' '}
                             <Link
-                                className="hover:text-gray-100 transition-colors duration-300"
+                                className="hover:text-stone-100 transition-colors duration-300"
                                 href={'http://www.roryholmes.com'}
                             >
                                 Website by Rory Holmes

@@ -10,7 +10,7 @@ const Intro = () => {
             if (part.match(/\{.*?\}/)) {
                 const boldText = part.replace(/[{}]/g, '');
                 return (
-                    <span key={index} className="font-semibold text-gray-100">
+                    <span key={index} className="font-semibold text-stone-100">
                         {boldText}
                     </span>
                 );

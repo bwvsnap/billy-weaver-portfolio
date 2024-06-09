@@ -10,7 +10,7 @@ const MenuBtn: React.FC<MenuBtnProps> = ({ isOpen, onClick }) => {
     return (
         <button onClick={onClick}>
             <div
-                className={`w-30 p-2  rounded-full border border-gray-100 before:bg-gray-100 ${styles.btnContents} overflow-hidden`}
+                className={`w-30 p-2  rounded-full border border-stone-100 before:bg-stone-100 ${styles.btnContents} overflow-hidden`}
             >
                 <div className="flex justify-between items-center mix-blend-difference">
                     {isOpen ? (

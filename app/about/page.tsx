@@ -12,7 +12,7 @@ export default function About() {
                     </h1>
 
                     <div className="flex flex-col-reverse md:flex-row  items-center md:items-stretch justify-between w-full gap-16">
-                        <div className="flex flex-col w-full md:w-2/3  font-light text-justify xl:leading-8 2xl:leading-9 text-sm md:text-base  2xl:text-lg space-y-10">
+                        <div className="flex flex-col w-full md:w-2/3  font-light  xl:leading-8 2xl:leading-9 text-sm md:text-base  2xl:text-lg space-y-10">
                             <p>
                                 {' '}
                                 I have been taking photographs since I was old
