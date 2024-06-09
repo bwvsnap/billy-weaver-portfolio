@@ -100,7 +100,7 @@ export default function PortfolioPage() {
     }, []);
 
     return (
-        <div className="pt-[130px]">
+        <div className="pt-[130px] mb-32">
             {error && <p>Error: {error}</p>}
             <Gallery mediaItems={mediaItems} allTags={allTags} />
         </div>

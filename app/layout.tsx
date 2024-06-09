@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from './components/Navbar';
@@ -7,8 +7,6 @@ import Footer from './components/Sections/Footer';
 import { AosInit } from './components/AosInit';
 
 const inter = Inter({ subsets: ['latin'] });
-
-const noto = Noto_Sans_Mono({ subsets: ['latin'] });
 
 const monument = localFont({
     src: [
@@ -45,16 +43,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className}  ${monument.variable} dark bg-[#0b0b0b] text-stone-100 font-light tracking-wide `}
+                className={`${inter.className}  ${monument.variable} w-full dark bg-[#0b0b0b] text-stone-100 font-light tracking-wide flex flex-col items-center`}
             >
-                <div id="smooth-wrapper">
-                    <div id="smooth-content">
-                        <AosInit />
-                        <Navbar />
-                        <main className=""> {children}</main>
-                        <Footer />
-                    </div>
-                </div>
+                <AosInit />
+                <Navbar />
+                <main className="w-full"> {children}</main>
+                <Footer />
             </body>
         </html>
     );

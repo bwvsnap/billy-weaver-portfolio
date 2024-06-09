@@ -4,7 +4,7 @@ import InternalLink from '../components/InternalLink';
 export default function About() {
     return (
         <div className="flex flex-col items-center">
-            <div className=" max-w-screen-2xl pt-[160px] px-3 md:px-20 w-full   flex flex-col justify-center items-center mb-60">
+            <div className=" max-w-screen-2xl pt-[160px] px-3 md:px-20 w-full   flex flex-col justify-center items-center mb-32">
                 <div className="flex flex-col justify-center items-center space-y-16  w-full h-1/2 md:h-auto ">
                     <h1 className="text-2xl text-center md:text-6xl xl:text-7xl font-semibold font-monument  2xl:text-8xl">
                         {' '}
