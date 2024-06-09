@@ -38,7 +38,7 @@ const Footer = () => {
 
             // Calculate the midpoint between the right edge of text and the left edge of the arrow
             const finalPosX = (textRect.right + arrowRect.left) / 2;
-            const maxTranslateX = finalPosX - window.innerWidth / 2;
+            const maxTranslateX = 0.57 * finalPosX - 0.43 * window.innerWidth;
 
             // Calculate progress: 0 when button top hits bottom of viewport, 1 when button bottom hits bottom of viewport
             let progress =
