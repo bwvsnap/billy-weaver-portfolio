@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const images = ['/images/hero.jpeg'];
+const images = ['/images/hero5.jpeg'];
 
 const HeroBackground: React.FC = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
