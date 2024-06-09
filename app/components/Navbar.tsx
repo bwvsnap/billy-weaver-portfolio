@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 import InternalLink from './InternalLink';
 import MenuBtn from './MenuBtn';
 import ExternalLink from './ExternalLink';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
     { href: '/', label: 'HOME' },
@@ -18,6 +19,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [textDelay, setTextDelay] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -82,16 +84,20 @@ const Navbar = () => {
                 </Link>
 
                 <div className="flex items-center z-50  pointer-events-auto">
-                    <div
-                        className="hidden md:flex mr-5"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        <InternalLink
-                            href="/contact"
-                            text="Let's Talk"
-                            large={false}
-                        />
-                    </div>
+                    {pathname !== '/contact' && (
+                        <>
+                            <div
+                                className="hidden md:flex mr-5"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                <InternalLink
+                                    href="/contact"
+                                    text="Let's Talk"
+                                    large={false}
+                                />
+                            </div>
+                        </>
+                    )}
 
                     <MenuBtn
                         isOpen={isOpen}
