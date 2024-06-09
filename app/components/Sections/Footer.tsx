@@ -114,7 +114,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row w-4/5 mb-4 md:mb-14 justify-between space-y-10 md:space-y-0">
                     <div className="flex flex-col items-start">
-                        <h4 className="mb-3 text-stone-400">CONTACT</h4>
+                        <h4 className="mb-3 text-stone-400 text-sm">CONTACT</h4>
                         <ul className="flex flex-col gap-2 md:gap-3 justify-start">
                             <li>
                                 <UnderlineLink href="tel:+447825294136">
@@ -129,7 +129,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h4 className="mb-3 text-stone-400">SITEMAP</h4>
+                        <h4 className="mb-3 text-stone-400 text-sm">SITEMAP</h4>
                         <ul className="grid md:grid-rows-2 gap-2 md:gap-3 grid-flow-col">
                             <li>
                                 <UnderlineLink href="/">Home</UnderlineLink>
@@ -155,7 +155,9 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h4 className="text-stone-400 md:pl-3 mb-3">SOCIALS</h4>
+                        <h4 className="text-stone-400 md:pl-3 mb-3 text-sm">
+                            SOCIALS
+                        </h4>
                         <div className="mb-8 flex flex-row gap-2 md:gap-3">
                             <ExternalLink
                                 href="https://www.instagram.com/billyweavervisuals/"

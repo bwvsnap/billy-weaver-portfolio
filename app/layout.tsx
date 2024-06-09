@@ -47,7 +47,10 @@ export default function RootLayout({
             >
                 <AosInit />
                 <Navbar />
-                <main className="w-full"> {children}</main>
+                <main className="w-full flex flex-col items-center">
+                    {' '}
+                    {children}
+                </main>
                 <Footer />
             </body>
         </html>

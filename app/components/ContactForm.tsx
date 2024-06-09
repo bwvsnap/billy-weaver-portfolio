@@ -126,7 +126,7 @@ const ContactForm: React.FC = () => {
     };
 
     const getLabelClass = (fieldName: FormField) => {
-        return formData[fieldName] ? 'text-gray-100/50' : 'text-gray-100';
+        return formData[fieldName] ? 'text-stone-100/50' : 'text-stone-100';
     };
 
     const fields = [
@@ -180,7 +180,7 @@ const ContactForm: React.FC = () => {
     return (
         <form
             id="contact-form"
-            className="w-full px-3 md:px-0 md:w-2/3 md:text-2xl font-light"
+            className="w-full  md:px-0  md:text-xl font-light"
             encType="multipart/form-data"
             onSubmit={handleSubmit}
         >
@@ -189,7 +189,7 @@ const ContactForm: React.FC = () => {
                     key={field.id}
                     className={`flex flex-col w-full ${
                         field.component === 'textarea' ? 'border-y' : 'border-t'
-                    } border-gray-100/30 py-8 md:py-12`}
+                    } border-stone-100/30 py-8 `}
                 >
                     <label
                         htmlFor={field.id}
@@ -197,7 +197,7 @@ const ContactForm: React.FC = () => {
                             field.name as FormField
                         )}`}
                     >
-                        <h5 className="w-8 h-6 md:w-10 md:h-8 flex items-center justify-center text-xs md:text-sm uppercase tracking-wider opacity-50 border border-gray-100/50 rounded-3xl">{`0${
+                        <h5 className="w-8 h-6 md:w-10 md:h-8 flex items-center justify-center text-xs md:text-sm uppercase tracking-wider  border border-stone-100/50 rounded-3xl">{`0${
                             index + 1
                         }`}</h5>
                         {field.label}
@@ -208,7 +208,7 @@ const ContactForm: React.FC = () => {
                             id={field.id}
                             name={field.name}
                             placeholder={field.placeholder}
-                            className="w-full pt-4 pl-11 md:pl-16 text-sm md:text-xl bg-transparent border-0 placeholder-gray-100/50 focus:outline-none"
+                            className="w-full pt-4 pl-11 md:pl-16 text-sm md:text-lg bg-transparent border-0 placeholder-stone-100/50 focus:outline-none"
                             required={field.required}
                             onChange={handleInputChange(
                                 field.name as FormField,
@@ -225,7 +225,7 @@ const ContactForm: React.FC = () => {
                             name={field.name}
                             rows={field.rows}
                             placeholder={field.placeholder}
-                            className="w-full pt-4 pl-11 md:pl-16  text-sm md:text-xl bg-transparent border-0 resize-none placeholder-gray-100/50 focus:outline-none"
+                            className="w-full pt-4 pl-11 md:pl-16  text-sm md:text-lg bg-transparent border-0 resize-none placeholder-gray-100/50 focus:outline-none"
                             required={field.required}
                             onChange={handleInputChange(
                                 field.name as FormField,
@@ -252,7 +252,7 @@ const ContactForm: React.FC = () => {
                             text="Send Message"
                             onClick={handleSubmitClick}
                         />
-                        <p className="text-sm text-gray-100/50">
+                        <p className="text-sm text-stone-400">
                             * Mandatory field
                         </p>
                     </div>
@@ -269,7 +269,7 @@ const ContactForm: React.FC = () => {
                 <div role="status" className="mt-4">
                     <svg
                         aria-hidden="true"
-                        className="w-8 h-8 text-gray-600 animate-spin  fill-gray-100"
+                        className="w-8 h-8 text-gray-600 animate-spin  fill-stone-100"
                         viewBox="0 0 100 101"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -288,7 +288,7 @@ const ContactForm: React.FC = () => {
             )}
 
             {submitStatus === successMsg && (
-                <p className="text-sm md:text-base text-gray-100/50 mt-4">
+                <p className="text-sm md:text-base text-stone-400 mt-4">
                     {submitStatus}
                 </p>
             )}
