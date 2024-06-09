@@ -42,7 +42,7 @@ export default async function ContactPage() {
                         <h4 className="text-stone-400  mb-3 text-sm">
                             SOCIALS
                         </h4>
-                        <div className="mb-8 flex flex-row md:flex-col gap-2 md:gap-3">
+                        <div className="mb-8 flex flex-row md:flex-col gap-2 md:gap-4">
                             <ExternalLink
                                 href="https://www.instagram.com/billyweavervisuals/"
                                 text="Instagram"
