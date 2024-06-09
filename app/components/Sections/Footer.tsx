@@ -80,7 +80,7 @@ const Footer = () => {
             window.removeEventListener('scroll', handleScroll);
             observer.disconnect();
         };
-    }, []);
+    }, [pathname]);
 
     return (
         <>
