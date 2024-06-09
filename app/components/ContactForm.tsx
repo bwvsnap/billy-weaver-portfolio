@@ -225,7 +225,7 @@ const ContactForm: React.FC = () => {
                             name={field.name}
                             rows={field.rows}
                             placeholder={field.placeholder}
-                            className="w-full pt-4 pl-11 md:pl-16  text-sm md:text-lg bg-transparent border-0 resize-none placeholder-gray-100/50 focus:outline-none"
+                            className="w-full pt-4 pl-11 md:pl-16  text-sm md:text-lg bg-transparent border-0 resize-none placeholder-stone-100/50 focus:outline-none"
                             required={field.required}
                             onChange={handleInputChange(
                                 field.name as FormField,

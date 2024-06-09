@@ -100,7 +100,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                 {item.type == 'video' && (
                                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                         <div className="rounded-full flex items-center justify-center bg-black/60 p-3 md:p-5 backdrop-blur-sm ">
-                                            <FaPlay className="text-lg md:text-3xl text-gray-100 pl-1" />
+                                            <FaPlay className="text-lg md:text-3xl text-stone-100 pl-1" />
                                         </div>
                                     </div>
                                 )}
