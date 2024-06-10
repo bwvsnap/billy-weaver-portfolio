@@ -109,7 +109,7 @@ const Footer = () => {
                                     className="h-[8.5rem] w-[8.5rem] md:w-44 md:h-44 rounded-full bg-[#EE6E31] hover:scale-90 transition-all duration-500 flex items-center justify-center"
                                     href={'/contact'}
                                 >
-                                    <span className="text-center text-sm md:text-xl text-[#0b0b0b]">
+                                    <span className="text-center text-sm md:text-xl font-normal text-[#0b0b0b]">
                                         Get In Touch
                                     </span>
                                 </Link>
