@@ -78,7 +78,7 @@ const Navbar = () => {
                 <Link
                     href="/"
                     onClick={() => setIsOpen(false)}
-                    className="hover:scale-95 hover:-translate-y-1 duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
+                    className="hover:scale-95  duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
                 >
                     BILLY WEAVER
                 </Link>
