@@ -88,14 +88,14 @@ const Footer = () => {
             <div className="w-full max-w-screen-2xl px-2 md:px-10 flex flex-col items-center ">
                 {pathname !== '/contact' && (
                     <>
-                        <div className="flex flex-row w-full justify-between items-start p-2 mb-7 md:p-5 md:mb-14">
+                        <div className="flex flex-row w-full justify-between items-start  mb-7  md:mb-14">
                             <h3
-                                className="font-monument font-bold text-2xl md:text-7xl "
+                                className="font-monument font-bold text-2xl md:text-5xl lg:text-7xl "
                                 ref={textRef}
                             >
                                 LET&apos;S WORK
                                 <br />
-                                <span className="md:ml-64">TOGETHER</span>
+                                <span className="lg:ml-64">TOGETHER</span>
                             </h3>
                             <div ref={arrowRef}>
                                 <MdArrowOutward className="rotate-180 text-4xl md:text-9xl md:mr-10 mt-5" />
@@ -103,7 +103,7 @@ const Footer = () => {
                         </div>
 
                         <div className="w-full flex items-center justify-center mb-10 md:mb-24 relative">
-                            <hr className="h-px my-8 bg-stone-100/20 border-0 w-full mx-3 md:mx-0 md:w-3/4" />
+                            <hr className="h-px my-8 bg-stone-100/20 border-0 w-full mx-3 md:mx-0 md:w-full" />
                             <div className="absolute" ref={buttonContainerRef}>
                                 <Link
                                     className="h-[8.5rem] w-[8.5rem] md:w-44 md:h-44 rounded-full bg-[#EE6E31] hover:scale-90 transition-all duration-500 flex items-center justify-center"
@@ -118,7 +118,7 @@ const Footer = () => {
                     </>
                 )}
 
-                <div className="flex flex-col md:flex-row w-4/5 mb-4 md:mb-14 justify-between space-y-10 md:space-y-0">
+                <div className="flex flex-col lg:flex-row w-full mb-4 lg:mb-14 justify-between space-y-10 lg:space-y-0">
                     <div className="flex flex-col items-start">
                         <h4 className="mb-3 text-stone-400 text-sm">CONTACT</h4>
                         <ul className="flex flex-col gap-2 md:gap-3 justify-start">
@@ -136,7 +136,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col items-start">
                         <h4 className="mb-3 text-stone-400 text-sm">SITEMAP</h4>
-                        <ul className="grid md:grid-rows-2 gap-2 md:gap-3 grid-flow-col">
+                        <ul className="grid lg:grid-rows-2 gap-2 md:gap-3 grid-flow-col">
                             <li>
                                 <UnderlineLink href="/">Home</UnderlineLink>
                             </li>
@@ -161,7 +161,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h4 className="text-stone-400 md:pl-3 mb-3 text-sm">
+                        <h4 className="text-stone-400 lg:pl-3 mb-3 text-sm">
                             SOCIALS
                         </h4>
                         <div className="mb-8 flex flex-row gap-2 md:gap-3">
@@ -179,19 +179,18 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="w-full px-2 md:px-10 flex flex-col-reverse md:flex-row items-center justify-between gap-8 mb-8">
-                <p className="text-stone-400 text-center text-sm md:text-base md:text-start">
-                    © 2024 Billy Weaver /{' '}
-                    <Link
-                        className="hover:text-stone-100 transition-colors duration-300"
-                        href={'http://www.roryholmes.com'}
-                    >
-                        Website by Rory Holmes
-                    </Link>
-                </p>
-                <BackToTop />
+                <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 mb-8">
+                    <p className="text-stone-400 text-center text-sm md:text-base lg:text-start">
+                        © 2024 Billy Weaver /{' '}
+                        <Link
+                            className="hover:text-stone-100 transition-colors duration-300"
+                            href={'http://www.roryholmes.com'}
+                        >
+                            Website by Rory Holmes
+                        </Link>
+                    </p>
+                    <BackToTop />
+                </div>
             </div>
         </>
     );
