@@ -1,7 +1,7 @@
 import InternalLink from '../InternalLink'; // Ensure this is the correct path to your InternalLink component
 
 const text =
-    'Lorem, ipsum {dolor sit amet} consectetur adipisicing elit. Accusantium ut aperiam ea {corporis eius}. Rerum rem ad {consectetur officiis} beatae molestias vel ea. Laboriosam adipisci quisquam, pariatur tempore fugit atque.';
+    'Documentary-style {photographer} and {videographer} based in {Manchester UK}, blending classic techniques with experimentation to {bring ideas and stories to life} through compelling visual imagery.';
 const parts = text.split(/(\{.*?\})/);
 
 const Intro = () => {
@@ -21,7 +21,7 @@ const Intro = () => {
     };
 
     return (
-        <div className="mt-32 mb-32 md:mt-64 md:mb-48 flex flex-col items-center w-full font-light ">
+        <div className=" mb-32 md:mt-32 md:mb-32 flex flex-col items-center w-full font-light ">
             <div className="md:w-2/3 flex flex-col space-y-4 md:space-y-10 items-center">
                 <p className="md:text-4xl  md:leading-[3rem] text-stone-400 text-center">
                     {renderText()}
