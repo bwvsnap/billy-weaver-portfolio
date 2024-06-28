@@ -5,7 +5,11 @@ import InternalLink from '../InternalLink'; // Ensure this is the correct path t
 // Dummy data for now, which will later be replaced with API data
 const images = [
     {
-        src: '/images/6.jpg',
+        src: '/images/1.jpg',
+        alt: 'Featured image'
+    },
+    {
+        src: '/images/2.jpg',
         alt: 'Featured image'
     },
     {
@@ -17,15 +21,11 @@ const images = [
         alt: 'Featured image'
     },
     {
-        src: '/images/2.jpg',
+        src: '/images/5.jpg',
         alt: 'Featured image'
     },
     {
-        src: '/images/9.jpg',
-        alt: 'Featured image'
-    },
-    {
-        src: '/images/1.jpg',
+        src: '/images/6.jpg',
         alt: 'Featured image'
     }
 ];
