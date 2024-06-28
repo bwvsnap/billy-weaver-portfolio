@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Gallery } from '../components/Gallery';
 import { MediaItem } from '../interfaces/mediaItem';
 
-const allTags = ['Street', 'Event', 'Product', 'Cinematography'];
+const allTags = ['Adventure', 'Music', 'People', 'Editorial', 'Video'];
 
 export default function PortfolioPage() {
     const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
@@ -33,8 +33,6 @@ export default function PortfolioPage() {
 
         const generateMediaItems = async (): Promise<MediaItem[]> => {
             let fileUrls = await getFileUrlsFromBucket();
-            fileUrls = Array(5).fill(fileUrls).flat();
-            console.log(fileUrls);
             const mediaItems: MediaItem[] = [];
 
             for (let i = 0; i < fileUrls.length; i++) {
@@ -44,7 +42,7 @@ export default function PortfolioPage() {
                 while (selectedTags.length < numberOfTagsToAdd) {
                     const randomTag =
                         allTags[Math.floor(Math.random() * allTags.length)];
-                    if (randomTag === 'Cinematography') {
+                    if (randomTag === 'Video') {
                         continue;
                     }
                     if (!selectedTags.includes(randomTag)) {
@@ -71,7 +69,7 @@ export default function PortfolioPage() {
                 ]
             ];
             videoIds.forEach((id, index) => {
-                const selectedTags: string[] = ['Cinematography'];
+                const selectedTags: string[] = ['Video'];
                 mediaItems.push({
                     type: 'video',
                     src: id[0],

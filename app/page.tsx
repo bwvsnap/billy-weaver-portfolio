@@ -1,4 +1,3 @@
-import { Services } from './components/Sections/Services';
 import FeaturedWork from './components/Sections/FeaturedWork';
 import Intro from './components/Sections/Intro';
 import Hero from './components/Sections/Hero';
