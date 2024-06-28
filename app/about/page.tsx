@@ -49,7 +49,7 @@ export default function About() {
                         <div className="relative  h-64 w-64 md:h-auto md:w-96">
                             <Image
                                 className="rounded-full md:rounded-xl	 "
-                                src={'/images/billy.jpeg'}
+                                src={'/images/billy.jpg'}
                                 alt={''}
                                 fill
                                 objectFit="cover"
