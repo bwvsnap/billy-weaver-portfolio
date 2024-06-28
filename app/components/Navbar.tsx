@@ -74,7 +74,7 @@ const Navbar = () => {
                 <Link
                     href="/"
                     onClick={() => setIsOpen(false)}
-                    className="hover:scale-95  duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
+                    className="hover:scale-95 duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
                 >
                     <h3
                         className={`transition duration-1000 ${
@@ -83,11 +83,12 @@ const Navbar = () => {
                                 : 'opacity-100'
                         } `}
                     >
-                        BILLY WEAVER
+                        <span className="md:hidden">BW</span>
+                        <span className="hidden md:inline">BILLY WEAVER</span>
                     </h3>
                 </Link>
 
-                <div className="flex items-center z-50  pointer-events-auto">
+                <div className="flex items-center z-50 pointer-events-auto">
                     {pathname !== '/contact' && (
                         <>
                             <div
@@ -113,12 +114,12 @@ const Navbar = () => {
                         isOpen ? styles.open : ''
                     } fixed inset-0 h-screen bg-[#0b0b0b] flex flex-col justify-between items-center z-40 `}
                 >
-                    <div className="space-y-8 my-auto pt-20  flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
+                    <div className="space-y-8 my-auto pt-20 flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
                         {navLinks.map((link, index) => (
                             <div
                                 key={index}
                                 onClick={() => handleClick()}
-                                className={`${styles.linkContainer}  cursor-pointer`}
+                                className={`${styles.linkContainer} cursor-pointer`}
                             >
                                 <NavLink
                                     text={link.label}
@@ -129,7 +130,7 @@ const Navbar = () => {
                         ))}
                         <div
                             onClick={() => handleClick()}
-                            className={`${styles.linkContainer}  cursor-pointer`}
+                            className={`${styles.linkContainer} cursor-pointer`}
                         >
                             <ShopNavLink
                                 text="SHOP"
@@ -139,7 +140,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div
-                        className={` ${
+                        className={`${
                             textDelay
                                 ? styles.externalLinkFadeIn
                                 : styles.externalLinkFadeOut
@@ -160,7 +161,7 @@ const Navbar = () => {
                             />
                         </div>
 
-                        <p className=" text-stone-400 text-center  md:text-start text-sm md:text-base">
+                        <p className="text-stone-400 text-center md:text-start text-sm md:text-base">
                             © 2024 Billy Weaver /{' '}
                             <Link
                                 className="hover:text-stone-100 transition-colors duration-300"
