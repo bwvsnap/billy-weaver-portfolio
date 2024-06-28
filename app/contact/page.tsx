@@ -27,13 +27,8 @@ export default async function ContactPage() {
                         </h3>
                         <ul className="flex flex-col gap-2 md:gap-3 justify-start">
                             <li>
-                                <UnderlineLink href="tel:+447825294136">
-                                    +44 7825 294136
-                                </UnderlineLink>
-                            </li>
-                            <li>
-                                <UnderlineLink href="mailto:billy@billyweaver.co.uk">
-                                    billy@billyweaver.co.uk
+                                <UnderlineLink href="mailto:info@billyweaver.co.uk">
+                                    info@billyweaver.co.uk
                                 </UnderlineLink>
                             </li>
                         </ul>

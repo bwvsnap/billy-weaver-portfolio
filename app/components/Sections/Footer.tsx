@@ -123,19 +123,16 @@ const Footer = () => {
                         <h4 className="mb-3 text-stone-400 text-sm">CONTACT</h4>
                         <ul className="flex flex-col gap-2 md:gap-3 justify-start">
                             <li>
-                                <UnderlineLink href="tel:+447825294136">
-                                    +44 7825 294136
-                                </UnderlineLink>
-                            </li>
-                            <li>
-                                <UnderlineLink href="mailto:billy@billyweaver.co.uk">
-                                    billy@billyweaver.co.uk
+                                <UnderlineLink href="mailto:info@billyweaver.co.uk">
+                                    info@billyweaver.co.uk
                                 </UnderlineLink>
                             </li>
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h4 className="mb-3 text-stone-400 text-sm">SITEMAP</h4>
+                        <h4 className="mb-3 text-stone-400 text-sm">
+                            NAVIGATION
+                        </h4>
                         <ul className="grid lg:grid-rows-2 gap-2 md:gap-3 grid-flow-col">
                             <li>
                                 <UnderlineLink href="/">Home</UnderlineLink>
