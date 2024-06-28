@@ -55,7 +55,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
 
     return (
         <>
-            <div className="flex flex-wrap justify-center mb-20">
+            <div className="w-full flex flex-wrap justify-center mb-20">
                 <GalleryTag
                     tag="All"
                     activeTag={activeTag}
@@ -70,7 +70,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                     />
                 ))}
             </div>
-            <div className="w-full px-5 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div className="w-full px-5 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 ">
                 {Array.from({ length: columnCount }, (_, colIndex) => (
                     <div key={colIndex} className="flex flex-col gap-4">
                         {getColumns(colIndex).map((item, idx) => (
