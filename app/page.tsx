@@ -11,9 +11,7 @@ export default function Home() {
             <div className="px-3 md:px-9">
                 <Hero />
                 <Intro />
-                <hr className="h-px my-8 bg-stone-100/20  border-0 " />
                 <FeaturedWork />
-                <hr className="h-px my-8 bg-stone-100/20  border-0 " />
                 <Services />
             </div>
         </>
