@@ -71,35 +71,6 @@
     );
 }
 
-.overlayFadeIn {
-    opacity: 0;
-    animation: overlayFadeInAnimation ease 1s;
-    animation-fill-mode: forwards;
-}
-
-.overlayFadeOut {
-    animation: overlayFadeOutAnimation ease 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes overlayFadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.8;
-    }
-}
-
-@keyframes overlayFadeOutAnimation {
-    0% {
-        opacity: 0.8;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 .externalLinkFadeIn {
     opacity: 0;
     animation: externalLinkFadeInAnimation ease 0.4s;

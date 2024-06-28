@@ -62,13 +62,9 @@ const Navbar = () => {
     return (
         <>
             <div
-                className={`fixed w-screen left-0 h-36 pointer-events-none top-0 z-[49] ${
+                className={`fixed w-screen left-0 h-36 pointer-events-none top-0 z-[49] transition duration-1000 ${
                     styles.overlayGradient
-                } ${
-                    scrollPosition > 0
-                        ? styles.overlayFadeIn
-                        : styles.overlayFadeOut
-                }`}
+                } ${scrollPosition > 0 ? 'opacity-80' : 'opacity-0'}`}
             ></div>
             <nav
                 className={`fixed w-full flex justify-between items-center px-5 py-9 md:p-9 bg-transparent z-50 ${
@@ -80,7 +76,15 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className="hover:scale-95  duration-300 font-monument text-lg md:text-2xl font-bold z-50 cursor-pointer pointer-events-auto transition "
                 >
-                    BILLY WEAVER
+                    <h3
+                        className={`transition duration-1000 ${
+                            scrollPosition == 0 && !isOpen && pathname == '/'
+                                ? 'opacity-0'
+                                : 'opacity-100'
+                        } `}
+                    >
+                        BILLY WEAVER
+                    </h3>
                 </Link>
 
                 <div className="flex items-center z-50  pointer-events-auto">
