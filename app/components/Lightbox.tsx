@@ -12,7 +12,6 @@ import {
     CloseButton,
     CountWidget
 } from './LightboxWidgets';
-import AOS from 'aos';
 
 interface LightboxProps {
     filteredMedia: MediaItem[];
@@ -55,11 +54,7 @@ const Lightbox: FC<LightboxProps> = ({
                         } md:py-10 md:p-10`}
                         key={index}
                     >
-                        <div
-                            data-aos="zoom-in"
-                            data-aos-duration="2000"
-                            className="relative w-full h-full "
-                        >
+                        <div className="relative w-full h-full ">
                             {item.type === 'image' ? (
                                 <Image
                                     src={item.src}
@@ -70,6 +65,7 @@ const Lightbox: FC<LightboxProps> = ({
                                     objectFit="contain"
                                     quality={100}
                                     className="object-contain w-full h-full"
+                                    priority
                                 />
                             ) : (
                                 <iframe
