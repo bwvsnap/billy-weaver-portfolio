@@ -88,7 +88,7 @@ const Footer = () => {
             <div className="w-full max-w-screen-2xl px-2 md:px-10 flex flex-col items-center ">
                 {pathname !== '/contact' && (
                     <>
-                        <div className="flex flex-row w-full justify-between items-start  mb-7  md:mb-14">
+                        <div className="flex flex-row w-full justify-between items-start  mb-7  md:mb-14 p-2 lg:p-0">
                             <h3
                                 className="font-monument font-bold text-2xl md:text-5xl lg:text-7xl "
                                 ref={textRef}
@@ -118,7 +118,7 @@ const Footer = () => {
                     </>
                 )}
 
-                <div className="flex flex-col lg:flex-row w-full mb-4 lg:mb-14 justify-between space-y-10 lg:space-y-0">
+                <div className="flex flex-col lg:flex-row  w-4/5 lg:w-full mb-4 lg:mb-14 justify-between space-y-10 lg:space-y-0">
                     <div className="flex flex-col items-start">
                         <h4 className="mb-3 text-stone-400 text-sm">CONTACT</h4>
                         <ul className="flex flex-col gap-2 md:gap-3 justify-start">
@@ -176,7 +176,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 mb-8">
+                <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between p-2 lg:p-0 gap-8 mb-8">
                     <p className="text-stone-400 text-center text-sm md:text-base lg:text-start">
                         © 2024 Billy Weaver /{' '}
                         <Link
