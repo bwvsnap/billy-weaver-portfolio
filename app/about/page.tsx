@@ -6,7 +6,7 @@ export default function About() {
         <div className="flex flex-col items-center">
             <div className=" max-w-screen-2xl pt-[160px] px-3 md:px-20 w-full   flex flex-col justify-center items-center mb-32">
                 <div className="flex flex-col justify-center items-center space-y-16  w-full h-1/2 md:h-auto ">
-                    <h1 className="text-2xl text-center md:text-6xl font-semibold font-monument  ">
+                    <h1 className="text-center text-2xl md:text-5xl lg:text-7xl font-semibold font-monument  ">
                         {' '}
                         CAPTURING MOMENTS, CRAFTING STORIES{' '}
                     </h1>

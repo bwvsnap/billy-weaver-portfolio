@@ -37,7 +37,7 @@ const FeaturedWork = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="font-monument text-2xl md:text-7xl mb-20 w-full font-bold"
+                className="font-monument  text-2xl md:text-5xl lg:text-7xl mb-20 w-full font-bold"
             >
                 FEATURED WORK
             </h2>

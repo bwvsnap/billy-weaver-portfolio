@@ -78,7 +78,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 export const Services = () => {
     return (
         <div className="z-[-1] mb-40 flex flex-col space-y-20 justify-center items-center w-full">
-            <h2 className="font-monument text-2xl md:text-6xl w-full font-bold">
+            <h2 className="font-monument text-2xl md:text-5xl lg:text-7xl w-full font-bold">
                 SERVICES
             </h2>
             <ul className="w-full   z-[-1] grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-6  ">
