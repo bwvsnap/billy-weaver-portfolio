@@ -78,7 +78,7 @@ const Navbar = () => {
                 >
                     <h3
                         className={`transition duration-1000 ${
-                            scrollPosition == 0 && !isOpen && pathname == '/'
+                            scrollPosition < 500 && !isOpen && pathname == '/'
                                 ? 'opacity-0'
                                 : 'opacity-100'
                         } `}
