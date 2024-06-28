@@ -17,7 +17,7 @@ const Hero = () => {
                     <h1 className="text-center font-monument font-bold text-5xl md:text-8xl 2xl:text-9xl text-stroke-hover transition-all duration-1000 ease-in cursor-default">
                         BILLY WEAVER
                     </h1>
-                    <h2 className="w-4/5 mx-auto text-center">
+                    <h2 className="w-full md:w-4/5 mx-auto text-center text-sm md:text-base">
                         Documentary-style photographer and videographer based in
                         Manchester UK, blending classic techniques with
                         experimentation to bring ideas and stories to life
