@@ -61,11 +61,14 @@ const Lightbox: FC<LightboxProps> = ({
                             className="relative w-full h-full "
                         >
                             {item.type === 'image' ? (
-                                <img
+                                <Image
                                     src={item.src}
                                     alt={`Selected media with tags: ${item.tags.join(
                                         ', '
                                     )}`}
+                                    layout="fill"
+                                    objectFit="contain"
+                                    quality={100}
                                     className="object-contain w-full h-full"
                                 />
                             ) : (
