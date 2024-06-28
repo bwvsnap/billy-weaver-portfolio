@@ -1,4 +1,5 @@
-import InternalLink from '../InternalLink'; // Ensure this is the correct path to your InternalLink component
+import InternalLink from '../InternalLink';
+import 'aos/dist/aos.css';
 
 const text =
     'Documentary-style {photographer} and {videographer} based in {Manchester UK}, blending classic techniques with experimentation to {bring ideas and stories to life} through compelling visual imagery.';
@@ -21,7 +22,12 @@ const Intro = () => {
     };
 
     return (
-        <div className=" mb-32 md:mt-32 md:mb-32 flex flex-col items-center w-full font-light ">
+        <div
+            data-aos="fade-in"
+            data-aos-once="true"
+            data-aos-duration="800"
+            className=" mb-32 md:mt-32 md:mb-32 flex flex-col items-center w-full font-light "
+        >
             <div className="md:w-2/3 flex flex-col space-y-4 md:space-y-10 items-center">
                 <p className="md:text-4xl  md:leading-[3rem] text-stone-400 text-center">
                     {renderText()}

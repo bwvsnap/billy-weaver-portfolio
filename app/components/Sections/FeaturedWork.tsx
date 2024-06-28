@@ -33,7 +33,12 @@ const images = [
 const FeaturedWork = () => {
     return (
         <div className="flex flex-col mb-20 md:mb-40 justify-center items-center w-full">
-            <h2 className="font-monument text-2xl md:text-7xl mb-20 w-full font-bold">
+            <h2
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="font-monument text-2xl md:text-7xl mb-20 w-full font-bold"
+            >
                 FEATURED WORK
             </h2>
             <div className="w-full mb-20 md:mb-32 grid grid-cols-2 grid-flow-row md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 ">
@@ -41,6 +46,10 @@ const FeaturedWork = () => {
                     <div
                         key={index}
                         className="relative rounded-2xl aspect-square overflow-hidden"
+                        data-aos="fade-in"
+                        data-aos-once="true"
+                        data-aos-duration="800"
+                        data-aos-delay={index * 100}
                     >
                         <Image
                             src={image.src}
@@ -51,7 +60,12 @@ const FeaturedWork = () => {
                     </div>
                 ))}
             </div>
-            <div className="w-full flex flex-row justify-start">
+            <div
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="w-full flex flex-row justify-start"
+            >
                 <InternalLink
                     href={'/portfolio'}
                     text={'View All Work'}
