@@ -94,6 +94,9 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                         layout="responsive"
                                         className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-110"
                                         quality={50}
+                                        priority={
+                                            filteredMedia.indexOf(item) < 8
+                                        }
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                                 </div>
