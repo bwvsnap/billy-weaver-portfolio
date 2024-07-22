@@ -83,7 +83,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                     )
                                 }
                             >
-                                <div className="relative overflow-hidden rounded-xl">
+                                <div className="relative overflow-hidden rounded-xl ">
                                     <Image
                                         src={item.thumbnail ?? item.src}
                                         alt={`Media with tags: ${item.tags.join(
