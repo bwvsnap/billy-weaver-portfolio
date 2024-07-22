@@ -72,7 +72,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 export const Services = () => {
-    const [isMdOrLarger, setIsMdOrLarger] = useState(window.innerWidth >= 768);
+    const [isMdOrLarger, setIsMdOrLarger] = useState(true);
 
     useEffect(() => {
         const handleResize = () => {
