@@ -114,7 +114,7 @@ const Navbar = () => {
                         isOpen ? styles.open : ''
                     } fixed inset-0 h-screen bg-[#0b0b0b] flex flex-col justify-between items-center z-40 `}
                 >
-                    <div className="space-y-8 my-auto pt-20 flex flex-col justify-center text-center text-3xl md:text-7xl font-monument font-bold">
+                    <div className="space-y-8 my-auto pt-20 flex flex-col justify-center text-center text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-monument font-bold">
                         {navLinks.map((link, index) => (
                             <div
                                 key={index}

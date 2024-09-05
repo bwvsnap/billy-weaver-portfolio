@@ -1,15 +1,10 @@
-import Image from 'next/image';
+'use client';
 import { IconBaseProps } from 'react-icons';
 import { BsSoundwave } from 'react-icons/bs';
-import { CiCamera, CiDesktopMouse2 } from 'react-icons/ci';
-import { PiFilmReelLight } from 'react-icons/pi';
-import { BsRecordCircle } from 'react-icons/bs';
-
+import { CiDesktopMouse2 } from 'react-icons/ci';
 import { MdCamera } from 'react-icons/md';
-
-import { RiCameraLensLine } from 'react-icons/ri';
-
 import { VscRecord } from 'react-icons/vsc';
+import { useEffect, useState } from 'react';
 
 const services = [
     {
@@ -44,30 +39,31 @@ interface ServiceCardProps {
     title: string;
     description: string;
     Icon: React.ComponentType<IconBaseProps>;
+    delay: number;
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
     imgUrl,
     title,
     description,
-    Icon
+    Icon,
+    delay
 }) => {
     return (
-        <div className=" flex flex-col items-center w-full space-y-8">
-            <div className="relative overflow-hidden w-full aspect-[0.74]  rounded-xl md:mb-2">
-                <Image
-                    src={imgUrl}
-                    alt={title + ' service card image'}
-                    layout="fill"
-                    objectFit="cover"
-                />
-                <div className="absolute bottom-0 left-0 p-2">
-                    <Icon className="text-5xl md:text-6xl text-stone-100 bg-black/20 backdrop-blur-sm	rounded-full " />
-                </div>
-            </div>
-            <div className="flex flex-col space-y-1 md:space-y-3 justify-center w-full">
-                <h3 className="text-lg md:text-3xl font-normal">{title}</h3>
-                <h4 className="text-base md:text-xl text-stone-400">
+        <div
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay={delay}
+            className=" flex flex-col items-center justify-center w-full space-y-8 "
+        >
+            <Icon className="text-5xl md:text-6xl text-stone-100 bg-black/20 backdrop-blur-sm	rounded-full " />
+
+            <div className="flex flex-col space-y-1 md:space-y-3 justify-center items-center w-full">
+                <h3 className="text-lg md:text-3xl font-normal text-center">
+                    {title}
+                </h3>
+                <h4 className="text-base md:text-xl text-stone-400 text-center w-2/3 md:w-full">
                     {description}
                 </h4>
             </div>
@@ -76,12 +72,41 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 export const Services = () => {
+    const [isMdOrLarger, setIsMdOrLarger] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMdOrLarger(window.innerWidth >= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
-        <div className="z-[-1] mb-40 flex flex-col space-y-20 justify-center items-center w-full">
-            <h2 className="font-monument text-2xl md:text-5xl lg:text-7xl w-full font-bold">
-                SERVICES
+        <div className="mb-40 flex flex-col  justify-center items-center w-full ">
+            <h2
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="font-monument text-2xl md:text-5xl mb-10 lg:text-6xl 2xl:text-7xl text-center w-full font-bold"
+            >
+                BRINGING VISIONS TO LIFE{' '}
             </h2>
-            <ul className="w-full   z-[-1] grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-6  ">
+            <p
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="text-base md:text-2xl 2xl:text-4xl  md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400  md:w-3/4 text-center mb-20"
+            >
+                I utilise my skills in photography, videography, sound
+                engineering and post-production to create compelling visual
+                narratives that bring your vision to life.{' '}
+            </p>
+
+            <ul className="w-full   grid grid-cols-1 md:grid-cols-4 gap-y-16 gap-x-6  ">
                 {services.map((service, index) => (
                     <li key={index}>
                         <ServiceCard
@@ -89,6 +114,7 @@ export const Services = () => {
                             title={service.title}
                             description={service.description}
                             Icon={service.Icon}
+                            delay={isMdOrLarger ? index * 400 : 0}
                         />
                     </li>
                 ))}

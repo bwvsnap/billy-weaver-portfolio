@@ -90,7 +90,7 @@ const Footer = () => {
                     <>
                         <div className="flex flex-row w-full justify-between items-start  mb-7  md:mb-14 p-2 lg:p-0">
                             <h3
-                                className="font-monument font-bold text-2xl md:text-5xl lg:text-7xl "
+                                className="font-monument font-bold text-2xl md:text-5xl lg:text-6xl xl:text-7xl"
                                 ref={textRef}
                             >
                                 LET&apos;S WORK

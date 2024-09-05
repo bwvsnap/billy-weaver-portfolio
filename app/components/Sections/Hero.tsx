@@ -1,6 +1,15 @@
 import 'aos/dist/aos.css';
 
 const Hero = () => {
+    const data = [
+        { title: 'I am a', description: 'Freelance creative producer' },
+        {
+            title: 'Specialised in',
+            description: 'Photo, Film, Sound & Editing'
+        },
+        { title: 'Based in', description: 'Manchester, UK' }
+    ];
+
     return (
         <>
             <div

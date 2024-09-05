@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Keyboard, Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, Navigation, Pagination, Virtual } from 'swiper/modules';
 import { MediaItem } from '../interfaces/mediaItem';
 import { FC, useState } from 'react';
 import {
