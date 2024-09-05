@@ -7,21 +7,27 @@ const Hero = () => {
                 id="test"
                 className="w-full h-screen flex flex-col pb-7 pt-[80px]"
             >
-                <div
-                    data-aos="zoom-out"
-                    data-aos-once="true"
-                    data-aos-duration="800"
-                    data-aos-anchor="#test"
-                    className="my-auto mx-auto space-y-10 "
-                >
-                    <h1 className="text-center font-monument font-bold text-5xl md:text-8xl 2xl:text-9xl text-stroke-hover transition-all duration-1000 ease-in cursor-default">
-                        BILLY WEAVER
-                    </h1>
-                    <h2 className="w-full md:w-4/5 mx-auto text-center text-sm md:text-base">
-                        Documentary-style photographer and videographer based in
-                        Manchester UK, blending classic techniques with
-                        experimentation to bring ideas and stories to life
-                        through compelling visual imagery.
+                <div className="my-auto mx-auto space-y-10 ">
+                    <div
+                        data-aos="zoom-out"
+                        data-aos-once="true"
+                        data-aos-duration="800"
+                        data-aos-anchor="#test"
+                    >
+                        <h1 className="text-center font-monument font-bold text-5xl md:text-8xl 2xl:text-9xl text-stroke-hover transition-all duration-1000 ease-in cursor-default">
+                            BILLY WEAVER
+                        </h1>
+                    </div>
+
+                    <h2
+                        data-aos="fade-in"
+                        data-aos-once="true"
+                        data-aos-duration="800"
+                        data-aos-delay="800"
+                        data-aos-anchor="#test"
+                        className="w-full font-monument font-bold md:w-4/5 mx-auto text-center text- md:text-3xl 2xl:text-4xl text-[#c8c8c8]"
+                    >
+                        PHOTOGRAPHER, VIDEOGRAPHER AND EDITOR
                     </h2>
                 </div>
             </div>
