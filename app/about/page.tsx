@@ -11,7 +11,7 @@ export default function About() {
                     </h1>
 
                     <div className="flex flex-col-reverse md:flex-row items-center md:items-stretch justify-between w-full gap-16">
-                        <div className="flex flex-col w-full md:w-2/3 font-light xl:leading-8 2xl:leading-9 text-sm md:text-base 2xl:text-lg space-y-10">
+                        <div className=" text-stone-400 flex flex-col w-full md:w-2/3 font-light xl:leading-8 2xl:leading-9 text-sm md:text-base 2xl:text-lg space-y-10">
                             <p>
                                 As a child, I often found myself amid two
                                 worlds: the vibrant, bustling streets of the

@@ -86,7 +86,7 @@ export const Services = () => {
         };
     }, []);
     return (
-        <div className="mb-40 flex flex-col  justify-center items-center w-full ">
+        <div className="mb-40 max-w-screen-2xl flex flex-col  justify-center items-center w-full ">
             <h2
                 data-aos="fade-in"
                 data-aos-once="true"
@@ -99,7 +99,7 @@ export const Services = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="text-base md:text-2xl 2xl:text-4xl  md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400  md:w-3/4 text-center mb-20"
+                className="text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center mb-20"
             >
                 I utilise my skills in photography, videography, sound
                 engineering and post-production to create compelling visual

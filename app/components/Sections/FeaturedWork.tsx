@@ -91,7 +91,7 @@ const FeaturedWork = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="w-full flex flex-row justify-start"
+                className=" w-full flex flex-row justify-start"
             >
                 <InternalLink
                     href={'/portfolio'}

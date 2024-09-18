@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <>
             <HeroBackground />
-            <div className="px-3 md:px-9">
+            <div className="w-full flex flex-col items-center px-3 md:px-9">
                 <Hero />
                 <Intro />
                 <FeaturedWork />

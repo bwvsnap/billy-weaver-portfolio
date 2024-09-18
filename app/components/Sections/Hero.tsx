@@ -11,8 +11,8 @@ const Hero = () => {
     ];
 
     return (
-        <div id="hero" className="w-full h-screen flex flex-col pt-[80px]">
-            <div className="my-auto mx-auto space-y-10 ">
+        <div id="hero" className="max-w-screen-2xl w-full h-screen flex flex-col pt-[80px]">
+            <div className=" my-auto mx-auto space-y-10 ">
                 <div
                     data-aos="zoom-out"
                     data-aos-once="true"
