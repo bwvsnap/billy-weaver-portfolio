@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import AWS from 'aws-sdk';
 
 // Configure the AWS SDK with R2 credentials and endpoint
@@ -11,7 +10,10 @@ const s3 = new AWS.S3({
 });
 
 // Function to list objects in the R2 bucket with a specific path
-export async function listObjects(bucketName: string, prefix: string) {
+export async function listObjects(
+    bucketName: string,
+    prefix: string
+): Promise<{ Key: string }[]> {
     const params = {
         Bucket: bucketName,
         Prefix: prefix
@@ -19,12 +21,9 @@ export async function listObjects(bucketName: string, prefix: string) {
 
     try {
         const data = await s3.listObjectsV2(params).promise();
-        return data.Contents || [];
+        return data.Contents as { Key: string }[]; // Explicitly cast to the expected type
     } catch (err) {
         console.error('Error listing objects: ', err);
         throw err;
     }
 }
-
-
-
