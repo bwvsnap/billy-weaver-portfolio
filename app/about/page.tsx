@@ -1,6 +1,42 @@
 import Image from 'next/image';
 import InternalLink from '../components/InternalLink';
 
+export const metadata = {
+    title: 'About | Billy Weaver Photography & Videography',
+    description:
+        'Learn about Billy Weaver, a Manchester-based photographer and videographer. Discover his passion for capturing moments and crafting stories through his work.',
+    openGraph: {
+        title: 'About | Billy Weaver Photography & Videography',
+        description:
+            'Explore the story behind Billy Weaver, a dedicated photographer and videographer from Manchester. Discover his journey and passion for visual storytelling.',
+        url: 'https://billyweaver.co.uk/about',
+        images: [
+            {
+                url: 'https://billyweaver.co.uk/images/billy.jpg',
+                width: 1200,
+                height: 800,
+                alt: 'Billy Weaver Photography and Videography'
+            }
+        ],
+        site_name: 'Billy Weaver'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@billyweaver',
+        title: 'About | Billy Weaver Photography & Videography',
+        description:
+            'Get to know Billy Weaver and his journey as a photographer and videographer. Discover his passion for capturing moments and storytelling.',
+        images: ['https://billyweaver.co.uk/images/billy.jpg']
+    },
+    icons: {
+        icon: '/favicon.ico'
+    },
+    robots: {
+        index: true,
+        follow: true
+    }
+};
+
 export default function About() {
     return (
         <div className="flex flex-col items-center">

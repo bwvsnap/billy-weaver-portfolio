@@ -1,17 +1,18 @@
 'use client';
+
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import { GalleryTag } from './GalleryTag';
+import { GalleryTag } from '../components/GalleryTag';
 import { MediaItem } from '../interfaces/mediaItem';
 import { FaPlay } from 'react-icons/fa';
-import Lightbox from './Lightbox';
+import Lightbox from '../components/Lightbox';
 
-interface GalleryProps {
-    mediaItems: MediaItem[];
-    allTags: string[];
-}
+// Define allTags as a constant in the component
+const allTags = ['Adventure', 'Music', 'People', 'Editorial', 'Video'];
 
-export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
+export const Gallery: React.FC = () => {
+    const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const [activeTag, setActiveTag] = useState<string>('All');
     const [columnCount, setColumnCount] = useState<number>(4);
     const [lightboxActive, setLightboxActive] = useState<boolean>(false);
@@ -26,7 +27,79 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
         updateColumnCount();
         window.addEventListener('resize', updateColumnCount);
 
-        document.body.classList.remove('overflow-hidden');
+        const fetchMediaItems = async () => {
+            try {
+                const response = await fetch('/api/listFiles', {
+                    method: 'GET'
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch files');
+                }
+                const data = await response.json();
+                const fileUrls = data.files;
+
+                const generateMediaItems = async (): Promise<MediaItem[]> => {
+                    const mediaItems: MediaItem[] = [];
+                    for (let i = 0; i < fileUrls.length; i++) {
+                        const selectedTags: string[] = [];
+                        const numberOfTagsToAdd =
+                            Math.floor(Math.random() * 2) + 1;
+
+                        while (selectedTags.length < numberOfTagsToAdd) {
+                            const randomTag =
+                                allTags[
+                                    Math.floor(Math.random() * allTags.length)
+                                ];
+                            if (randomTag === 'Video') continue;
+                            if (!selectedTags.includes(randomTag)) {
+                                selectedTags.push(randomTag);
+                            }
+                        }
+
+                        const mediaItem: MediaItem = {
+                            type: 'image',
+                            src: fileUrls[i],
+                            tags: selectedTags
+                        };
+                        mediaItems.push(mediaItem);
+                    }
+
+                    const videoIds = [
+                        [
+                            '93003441',
+                            'https://i.vimeocdn.com/video/472928026-41c6c9bb99dacf5dc0124757d2a0406340cff0046c5c6da3c19483ae6746b213-d_640xauto'
+                        ],
+                        [
+                            '265111898',
+                            'https://i.vimeocdn.com/video/695043548-885bab3819a63ebcabdfba41a496c24351a4c824957f40916917b7431c89e1c4-d_640xauto'
+                        ]
+                    ];
+
+                    videoIds.forEach((id) => {
+                        const selectedTags: string[] = ['Video'];
+                        mediaItems.push({
+                            type: 'video',
+                            src: id[0],
+                            tags: selectedTags,
+                            thumbnail: id[1]
+                        });
+                    });
+
+                    return mediaItems;
+                };
+
+                const items = await generateMediaItems();
+                setMediaItems(items);
+            } catch (error) {
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    setError('An unknown error occurred');
+                }
+            }
+        };
+
+        fetchMediaItems();
 
         return () => window.removeEventListener('resize', updateColumnCount);
     }, []);
@@ -70,7 +143,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                     />
                 ))}
             </div>
-            <div className="w-full px-5 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 ">
+            <div className="w-full px-5 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 {Array.from({ length: columnCount }, (_, colIndex) => (
                     <div key={colIndex} className="flex flex-col gap-4">
                         {getColumns(colIndex).map((item, idx) => (
@@ -83,7 +156,7 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                     )
                                 }
                             >
-                                <div className="relative overflow-hidden rounded-xl ">
+                                <div className="relative overflow-hidden rounded-xl">
                                     <Image
                                         src={item.thumbnail ?? item.src}
                                         alt={`Media with tags: ${item.tags.join(
@@ -100,9 +173,9 @@ export const Gallery: React.FC<GalleryProps> = ({ mediaItems, allTags }) => {
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                                 </div>
-                                {item.type == 'video' && (
+                                {item.type === 'video' && (
                                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <div className="rounded-full flex items-center justify-center bg-black/60 p-3 md:p-5 backdrop-blur-sm ">
+                                        <div className="rounded-full flex items-center justify-center bg-black/60 p-3 md:p-5 backdrop-blur-sm">
                                             <FaPlay className="text-lg md:text-3xl text-stone-100 pl-1" />
                                         </div>
                                     </div>

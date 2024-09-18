@@ -1,0 +1,11 @@
+# robots.txt for https://billyweaver.co.uk
+
+# Allow all crawlers to access the entire site except for specific areas
+User-agent: *
+Disallow: /shop # Disallow crawling of the shop page until it is live
+
+# Allow crawling of other directories
+Allow: /
+
+# Sitemap location
+Sitemap: https://billyweaver.co.uk/sitemap.xml
