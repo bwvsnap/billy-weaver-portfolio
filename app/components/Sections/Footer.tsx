@@ -181,7 +181,7 @@ const Footer = () => {
                         © {new Date().getFullYear()} Billy Weaver /{' '}
                         <Link
                             className="hover:text-stone-100 transition-colors duration-300"
-                            href={'http://www.roryholmes.com'}
+                            href={'http://www.roryholmes.co.uk'}
                         >
                             Website by Rory Holmes
                         </Link>
