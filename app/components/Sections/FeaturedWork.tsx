@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import InternalLink from '../InternalLink'; // Ensure this is the correct path to your InternalLink component
+import InternalLink from '../InternalLink';
 import { useState } from 'react';
 import Lightbox from '../Lightbox';
 import { MediaItem } from '@/app/interfaces/mediaItem';

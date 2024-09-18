@@ -178,7 +178,7 @@ const Footer = () => {
                 </div>
                 <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between p-2 lg:p-0 gap-8 mb-8">
                     <p className="text-stone-400 text-center text-sm md:text-base lg:text-start">
-                        © 2024 Billy Weaver /{' '}
+                        © {new Date().getFullYear()} Billy Weaver /{' '}
                         <Link
                             className="hover:text-stone-100 transition-colors duration-300"
                             href={'http://www.roryholmes.com'}

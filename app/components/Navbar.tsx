@@ -162,7 +162,7 @@ const Navbar = () => {
                         </div>
 
                         <p className="text-stone-400 text-center md:text-start text-sm md:text-base">
-                            © 2024 Billy Weaver /{' '}
+                            © {new Date().getFullYear()} Billy Weaver /{' '}
                             <Link
                                 className="hover:text-stone-100 transition-colors duration-300"
                                 href={'http://www.roryholmes.com'}
