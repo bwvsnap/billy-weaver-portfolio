@@ -1,4 +1,5 @@
-const AWS = require('aws-sdk');
+import { NextResponse } from 'next/server';
+import AWS from 'aws-sdk';
 
 // Configure the AWS SDK with R2 credentials and endpoint
 const s3 = new AWS.S3({
@@ -9,17 +10,21 @@ const s3 = new AWS.S3({
     signatureVersion: 'v4'
 });
 
-// Function to list objects in the R2 bucket
-export async function listObjects(bucketName: string) {
+// Function to list objects in the R2 bucket with a specific path
+export async function listObjects(bucketName: string, prefix: string) {
     const params = {
-        Bucket: bucketName
+        Bucket: bucketName,
+        Prefix: prefix
     };
 
     try {
         const data = await s3.listObjectsV2(params).promise();
-        return data.Contents;
+        return data.Contents || [];
     } catch (err) {
         console.error('Error listing objects: ', err);
         throw err;
     }
 }
+
+
+

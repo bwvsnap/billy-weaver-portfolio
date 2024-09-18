@@ -86,7 +86,6 @@ const ContactForm: React.FC = () => {
             if (response.ok) {
                 setSubmitStatus(successMsg);
             } else {
-                console.log(response.text);
                 setSubmitStatus('Failed to send email. Please try again.');
             }
         } catch (error) {

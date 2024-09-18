@@ -7,11 +7,9 @@ import { MediaItem } from '../interfaces/mediaItem';
 import { FaPlay } from 'react-icons/fa';
 import Lightbox from '../components/Lightbox';
 
-// Define allTags as a constant in the component
-const allTags = ['Adventure', 'Music', 'People', 'Editorial', 'Video'];
-
 export const Gallery: React.FC = () => {
     const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
+    const [allTags, setAllTags] = useState<string[]>(['Video']); // Start with 'Video' tag
     const [error, setError] = useState<string | null>(null);
     const [activeTag, setActiveTag] = useState<string>('All');
     const [columnCount, setColumnCount] = useState<number>(4);
@@ -29,67 +27,52 @@ export const Gallery: React.FC = () => {
 
         const fetchMediaItems = async () => {
             try {
-                const response = await fetch('/api/listFiles', {
-                    method: 'GET'
-                });
-                if (!response.ok) {
-                    throw new Error('Failed to fetch files');
+                // Fetch Vimeo videos from the API route
+                const vimeoResponse = await fetch('/api/listVideos');
+                if (!vimeoResponse.ok) {
+                    throw new Error('Failed to fetch Vimeo videos');
                 }
-                const data = await response.json();
-                const fileUrls = data.files;
+                const videoMediaItems: MediaItem[] = await vimeoResponse.json();
 
-                const generateMediaItems = async (): Promise<MediaItem[]> => {
-                    const mediaItems: MediaItem[] = [];
-                    for (let i = 0; i < fileUrls.length; i++) {
-                        const selectedTags: string[] = [];
-                        const numberOfTagsToAdd =
-                            Math.floor(Math.random() * 2) + 1;
-
-                        while (selectedTags.length < numberOfTagsToAdd) {
-                            const randomTag =
-                                allTags[
-                                    Math.floor(Math.random() * allTags.length)
-                                ];
-                            if (randomTag === 'Video') continue;
-                            if (!selectedTags.includes(randomTag)) {
-                                selectedTags.push(randomTag);
-                            }
-                        }
-
-                        const mediaItem: MediaItem = {
-                            type: 'image',
-                            src: fileUrls[i],
-                            tags: selectedTags
-                        };
-                        mediaItems.push(mediaItem);
+                // Fetch images
+                const imageResponse = await fetch(
+                    '/api/listFiles?path=PHOTOS/PORTFOLIO',
+                    {
+                        method: 'GET'
                     }
+                );
+                if (!imageResponse.ok) {
+                    throw new Error('Failed to fetch image files');
+                }
+                const imageData = await imageResponse.json();
+                const fileUrls = imageData.files;
 
-                    const videoIds = [
-                        [
-                            '93003441',
-                            'https://i.vimeocdn.com/video/472928026-41c6c9bb99dacf5dc0124757d2a0406340cff0046c5c6da3c19483ae6746b213-d_640xauto'
-                        ],
-                        [
-                            '265111898',
-                            'https://i.vimeocdn.com/video/695043548-885bab3819a63ebcabdfba41a496c24351a4c824957f40916917b7431c89e1c4-d_640xauto'
-                        ]
-                    ];
-
-                    videoIds.forEach((id) => {
-                        const selectedTags: string[] = ['Video'];
-                        mediaItems.push({
-                            type: 'video',
-                            src: id[0],
-                            tags: selectedTags,
-                            thumbnail: id[1]
-                        });
-                    });
-
-                    return mediaItems;
+                const extractTagsFromPath = (path: string): string[] => {
+                    const pathParts = path.split('/');
+                    const tagsPart = pathParts[pathParts.length - 2];
+                    return tagsPart.split('&').map((tag) => tag.trim());
                 };
 
-                const items = await generateMediaItems();
-                setMediaItems(items);
+                const imageMediaItems: MediaItem[] = fileUrls.map(
+                    (fileUrl: string) => {
+                        const tags = extractTagsFromPath(fileUrl);
+                        return {
+                            type: 'image',
+                            src: fileUrl,
+                            tags
+                        };
+                    }
+                );
+
+                const allMediaItems = [...videoMediaItems, ...imageMediaItems];
+                const tagsSet = new Set<string>(['Video']); // Start with 'Video'
+
+                allMediaItems.forEach((item) => {
+                    item.tags.forEach((tag) => tagsSet.add(tag));
+                });
+
+                setAllTags(Array.from(tagsSet).sort());
+                setMediaItems(allMediaItems);
             } catch (error) {
                 if (error instanceof Error) {
                     setError(error.message);
@@ -166,7 +149,7 @@ export const Gallery: React.FC = () => {
                                         height={1000}
                                         layout="responsive"
                                         className="w-full h-auto rounded-xl transition-transform duration-500 group-hover:scale-110"
-                                        quality={50}
+                                        quality={80}
                                         priority={
                                             filteredMedia.indexOf(item) < 8
                                         }
