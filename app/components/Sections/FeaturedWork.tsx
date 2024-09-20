@@ -62,7 +62,7 @@ const FeaturedWork = () => {
     };
 
     return (
-        <div className="flex flex-col mb-20 md:mb-40 justify-center items-center w-full">
+        <div className="flex flex-col mb-20 md:mb-40 justify-center items-center w-full bg-green-200">
             <h2
                 data-aos="fade-in"
                 data-aos-once="true"

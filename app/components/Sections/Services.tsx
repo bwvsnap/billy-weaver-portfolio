@@ -92,7 +92,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             data-aos-once="true"
             data-aos-duration="800"
             data-aos-delay={delay}
-            className="group perspective w-2/3 mx-auto md:w-full h-[250px] md:h-[350px]"
+            className="group perspective w-2/3 mx-auto md:w-full h-[250px] md:h-[350px] "
         >
             <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 {/* Front of the card */}
@@ -138,7 +138,7 @@ export const Services = () => {
     }, []);
 
     return (
-        <div className="mb-40 max-w-screen-2xl flex flex-col justify-center items-center w-full">
+        <div className="mb-40 max-w-screen-2xl flex flex-col justify-center items-center w-full bg-red-200">
             <h2
                 data-aos="fade-in"
                 data-aos-once="true"
