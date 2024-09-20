@@ -146,7 +146,7 @@ export const Services = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="md:w-3/4 text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center"
+                className="md:w-3/4 2xl:w-4/5  text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center"
             >
                 With a focus on sharp execution and strategic content, I
                 establish and elevate visual identity through distinctive

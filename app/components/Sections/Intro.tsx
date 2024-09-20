@@ -1,26 +1,7 @@
 import InternalLink from '../InternalLink';
 import 'aos/dist/aos.css';
 
-const text =
-    'Hi! fg fg I’m Billy, a {documentary-style photographer} and {videographer} working mainly in {events} and {content creation}, helping brands, artists, and business owners {enhance their identity} with {compelling visual media}. It all began in 2007, with a small compact camera…';
-const parts = text.split(/(\{.*?\})/);
-
 const Intro = () => {
-    const renderText = () => {
-        return parts.map((part, index) => {
-            if (part.match(/\{.*?\}/)) {
-                const boldText = part.replace(/[{}]/g, '');
-                return (
-                    <span key={index} className="font-semibold text-stone-100">
-                        {boldText}
-                    </span>
-                );
-            } else {
-                return <span key={index}>{part}</span>;
-            }
-        });
-    };
-
     return (
         <div className="max-w-screen-2xl -mt-6 mb-32 md:mt-12 flex flex-col items-center w-full font-light space-y-10">
             <h2
@@ -36,9 +17,30 @@ const Intro = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="md:w-3/4 text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center"
+                className="md:w-3/4 2xl:w-4/5 text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center"
             >
-                {renderText()}
+                Hi! I’m Billy, a{' '}
+                <span className="font-semibold text-stone-100">
+                    documentary-style photographer
+                </span>{' '}
+                and{' '}
+                <span className="font-semibold text-stone-100">
+                    videographer
+                </span>{' '}
+                working mainly in{' '}
+                <span className="font-semibold text-stone-100">events</span> and{' '}
+                <span className="font-semibold text-stone-100">
+                    content-creation
+                </span>{' '}
+                , helping brands, artists, and business owners{' '}
+                <span className="font-semibold text-stone-100">
+                    enahance their identity
+                </span>{' '}
+                with{' '}
+                <span className="font-semibold text-stone-100">
+                    compelling visual media
+                </span>{' '}
+                . It all began in 2007, with a small compact camera…
             </p>
             <div
                 data-aos="fade-in"
