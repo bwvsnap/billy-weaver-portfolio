@@ -53,18 +53,23 @@ export const Gallery: React.FC = () => {
                     return tagsPart.split('&').map((tag) => tag.trim());
                 };
 
-                const imageMediaItems: MediaItem[] = fileUrls.map(
-                    (fileUrl: string) => {
+                // Map image URLs to MediaItems and sort alphabetically by filename
+                const imageMediaItems: MediaItem[] = fileUrls
+                    .map((fileUrl: string) => {
                         const tags = extractTagsFromPath(fileUrl);
                         return {
                             type: 'image',
                             src: fileUrl,
                             tags
                         };
-                    }
-                );
+                    })
+                    .sort((a: any, b: any) => {
+                        const aFileName = a.src.split('/').pop();
+                        const bFileName = b.src.split('/').pop();
+                        return bFileName!.localeCompare(aFileName!);
+                    });
 
-                const allMediaItems = [...videoMediaItems, ...imageMediaItems];
+                const allMediaItems = [...imageMediaItems, ...videoMediaItems];
                 const tagsSet = new Set<string>(['Video']); // Start with 'Video'
 
                 allMediaItems.forEach((item) => {

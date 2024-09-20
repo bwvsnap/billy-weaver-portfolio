@@ -29,15 +29,20 @@ const FeaturedWork = () => {
                 const imageData = await imageResponse.json();
                 const fileUrls = imageData.files;
 
-                const fetchedImages: MediaItem[] = fileUrls.map(
-                    (fileUrl: string) => {
+                // Map file URLs to MediaItems and sort by the last part of the URL (filename)
+                const fetchedImages: MediaItem[] = fileUrls
+                    .map((fileUrl: string) => {
                         return {
                             type: 'image',
                             src: fileUrl,
                             tags: ['FeaturedImage']
                         };
-                    }
-                );
+                    })
+                    .sort((a: any, b: any) => {
+                        const aFileName = a.src.split('/').pop();
+                        const bFileName = b.src.split('/').pop();
+                        return aFileName!.localeCompare(bFileName!);
+                    });
 
                 setImages(fetchedImages);
             } catch (error) {

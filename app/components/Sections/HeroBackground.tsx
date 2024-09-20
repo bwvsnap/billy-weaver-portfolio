@@ -23,8 +23,13 @@ const HeroBackground: React.FC = () => {
 
                 const data = await response.json();
                 const fileUrls = data.files as string[];
+                const sortedFileUrls = fileUrls.sort((a, b) => {
+                    const aFileName = a.split('/').pop();
+                    const bFileName = b.split('/').pop();
+                    return aFileName!.localeCompare(bFileName!);
+                });
 
-                setImages(fileUrls);
+                setImages(sortedFileUrls);
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
