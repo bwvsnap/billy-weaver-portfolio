@@ -2,7 +2,7 @@ import InternalLink from '../InternalLink';
 import 'aos/dist/aos.css';
 
 const text =
-    'Hi! I’m Billy, a {documentary-style photographer} and {videographer} working mainly in {events} and {content creation}, helping brands, artists, and business owners {enhance their identity} with {compelling visual media. It all began in 2007, with a small compact camera…';
+    'Hi! fg fg I’m Billy, a {documentary-style photographer} and {videographer} working mainly in {events} and {content creation}, helping brands, artists, and business owners {enhance their identity} with {compelling visual media. It all began in 2007, with a small compact camera…';
 const parts = text.split(/(\{.*?\})/);
 
 const Intro = () => {
