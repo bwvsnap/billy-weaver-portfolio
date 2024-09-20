@@ -43,7 +43,7 @@ export default function About() {
             <div className="max-w-screen-2xl pt-[160px] px-3 md:px-20 w-full flex flex-col justify-center items-center mb-32">
                 <div className="flex flex-col justify-center items-center space-y-16 w-full h-1/2 md:h-auto">
                     <h1 className="text-center text-2xl md:text-5xl lg:text-7xl font-semibold font-monument">
-                        CAPTURING MOMENTS, CRAFTING STORIES
+                        FROM CAPTURING MOMENTS TO CRAFTING STORIES
                     </h1>
 
                     <div className="flex flex-col-reverse md:flex-row items-center md:items-stretch justify-between w-full gap-16">

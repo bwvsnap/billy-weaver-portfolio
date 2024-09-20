@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from './HeroBackground.module.css'; // Import your CSS module for styles
+import styles from './HeroBackground.module.css';
 
 const HeroBackground: React.FC = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -40,7 +40,7 @@ const HeroBackground: React.FC = () => {
             setCurrentImageIndex(
                 (prevIndex) => (prevIndex + 1) % images.length
             );
-        }, 5000); // 5 seconds for demo
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -55,7 +55,7 @@ const HeroBackground: React.FC = () => {
                     objectFit="cover"
                     quality={100}
                     alt={`Background ${index}`}
-                    objectPosition="50% 35%"
+                    objectPosition="50% 50%"
                     priority
                     className={`${styles.image} ${
                         index === currentImageIndex

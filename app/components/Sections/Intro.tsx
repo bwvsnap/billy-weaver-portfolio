@@ -22,13 +22,21 @@ const Intro = () => {
     };
 
     return (
-        <div
-            data-aos="fade-in"
-            data-aos-once="true"
-            data-aos-duration="800"
-            className="max-w-screen-2xl mt-0 mb-32 md:mt-32 md:mb-48 flex flex-col items-center w-full font-light "
-        >
-            <div className="md:w-2/3 flex flex-col space-y-4 md:space-y-10 items-center">
+        <div className="max-w-screen-2xl -mt-4 mb-32 md:mt-12 flex flex-col items-center w-full font-light ">
+            <h2
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="text-center font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-4 md:mb-10 w-full font-bold"
+            >
+                ABOUT ME
+            </h2>
+            <div
+                data-aos="fade-in"
+                data-aos-once="true"
+                data-aos-duration="800"
+                className="md:w-2/3 flex flex-col space-y-10 items-center"
+            >
                 <p className="text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center">
                     {renderText()}
                 </p>

@@ -8,13 +8,12 @@
 
 .text-stroke-hover:hover {
     color: transparent;
-    -webkit-text-stroke: 1px rgb(200, 200, 200);
+    -webkit-text-stroke: 1px rgb(245 245 244);
 }
 
 .text-stroke-hover {
-    -webkit-text-stroke: 1px rgb(200, 200, 200);
-
-    color: rgb(200, 200, 200);
+    -webkit-text-stroke: 1px rgb(245 245 244);
+    color: rgb(245 245 244);
 }
 
 .fadeIn {

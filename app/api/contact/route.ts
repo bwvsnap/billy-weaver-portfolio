@@ -5,7 +5,9 @@ export async function POST(request: Request) {
     const { name, email, company, service, message } = await request.json();
 
     const transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        host: 'smtp.zoho.eu',
+        secure: true,
+        port: 465,
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
@@ -13,16 +15,25 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-        from: email,
-        to: 'rorythomas511@gmail.com',
+        from: process.env.EMAIL_USER,
+        to: 'info@billyweaver.co.uk',
         subject: `New contact form submission from ${name}`,
         text: `
-            Name: ${name}
-            Email: ${email}
-            Company: ${company}
-            Service: ${service}
-            Message: ${message}
-        `
+        You have a new contact form submission:
+
+        -----------------------------------
+        Name:       ${name}
+        Email:      ${email}
+        Company:    ${company}
+        Service:    ${service}
+        -----------------------------------
+
+        Message:
+        ${message}
+
+        -----------------------------------
+        Sent from the website contact form.
+    `
     };
 
     try {

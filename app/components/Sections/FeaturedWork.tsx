@@ -67,7 +67,7 @@ const FeaturedWork = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-20 w-full font-bold"
+                className="text-center font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-8 md:mb-20 w-full font-bold"
             >
                 FEATURED WORK
             </h2>
@@ -97,7 +97,7 @@ const FeaturedWork = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="w-full flex flex-row justify-start"
+                className="w-full flex flex-row justify-center"
             >
                 <InternalLink
                     href={'/portfolio'}
