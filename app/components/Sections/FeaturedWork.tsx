@@ -62,16 +62,16 @@ const FeaturedWork = () => {
     };
 
     return (
-        <div className="flex flex-col mb-20 md:mb-40 justify-center items-center w-full bg-green-200">
+        <div className="flex flex-col mb-32 justify-center items-center w-full space-y-14">
             <h2
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="text-center font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-8 md:mb-20 w-full font-bold"
+                className="text-center font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl  w-full font-bold"
             >
                 FEATURED WORK
             </h2>
-            <div className="w-full mb-20 md:mb-32 grid grid-cols-2 grid-flow-row md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5">
+            <div className="w-full grid grid-cols-2 grid-flow-row md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5">
                 {images.map((image, index) => (
                     <div
                         key={index}
@@ -97,7 +97,7 @@ const FeaturedWork = () => {
                 data-aos="fade-in"
                 data-aos-once="true"
                 data-aos-duration="800"
-                className="w-full flex flex-row justify-center"
+                className="w-full flex flex-row  justify-center"
             >
                 <InternalLink
                     href={'/portfolio'}

@@ -84,7 +84,7 @@ const Footer = () => {
 
     return (
         <>
-            <hr className="h-px my-8 w-full bg-stone-100/20 border-0" />
+            <hr className="h-px mb-8 w-full bg-stone-100/20 border-0" />
             <div className="w-full max-w-screen-2xl px-2 md:px-10 flex flex-col items-center ">
                 {pathname !== '/contact' && (
                     <>

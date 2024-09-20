@@ -42,7 +42,7 @@ export const metadata = {
 
 export default async function ContactPage() {
     return (
-        <div className="pt-[160px] max-w-screen-2xl px-6 md:px-9 w-full xl:w-[72%] flex flex-col items-center mb-16 md:mb-32">
+        <div className="pt-[160px] max-w-screen-2xl px-6 md:px-9 w-full xl:w-[72%] flex flex-col items-center mb-32">
             <div className="flex flex-row w-full justify-between items-center mb-12 md:mb-20">
                 <h1 className="w-full lg:px-0 font-monument font-bold text-2xl md:text-6xl md:leading-[70px] xl:text-7xl xl:leading-[80px]">
                     LET&apos;S WORK
