@@ -22,7 +22,7 @@ const Intro = () => {
     };
 
     return (
-        <div className="max-w-screen-2xl -mt-4 mb-32 md:mt-12 flex flex-col items-center w-full font-light ">
+        <div className="max-w-screen-2xl -mt-6 mb-32 md:mt-12 flex flex-col items-center w-full font-light ">
             <h2
                 data-aos="fade-in"
                 data-aos-once="true"

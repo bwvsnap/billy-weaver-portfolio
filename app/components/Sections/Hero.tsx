@@ -8,17 +8,6 @@ const Hero = () => {
             className="max-w-screen-2xl w-full h-screen flex flex-col items-center justify-center  relative"
         >
             <div className="relative flex flex-col z-10 justify-center items-center w-[20rem] md:w-[33rem] xl:w-[64rem] 2xl:w-[85rem] my-auto space-y-3">
-                <div className="absolute -inset-5 md:-inset-12 xl:-inset-16  rounded-sm overflow-hidden">
-                    <div
-                        className="w-full h-full backdrop-blur-[2px] "
-                        style={{
-                            maskImage:
-                                'radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%)',
-                            WebkitMaskImage:
-                                'radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%)'
-                        }}
-                    ></div>
-                </div>
                 <div
                     data-aos="zoom-out"
                     data-aos-once="true"
@@ -36,15 +25,17 @@ const Hero = () => {
                     data-aos-duration="800"
                     data-aos-delay="800"
                     data-aos-anchor="#hero"
-                    className="w-full flex flex-col md:flex-row justify-between xl:px-1 2xl:px-[0.3rem] text-stone-400  drop-shadow-2xl  font-monument font-bold text-center text-sm md:text-xs xl:text-2xl 2xl:text-[2rem]"
+                    className="w-full flex flex-col md:flex-row justify-between xl:px-1 2xl:px-[0.3rem] text-stone-100  drop-shadow-2xl  font-monument font-bold text-center text-xs md:text-xs xl:text-2xl 2xl:text-[2rem]"
                 >
-                    <span>PHOTOGRAPHER</span>{' '}
-                    <span className="block md:hidden">•</span>{' '}
+                    <span className="block md:hidden">
+                        PHOTOGRAPHER, VIDEOGRAPHER
+                    </span>{' '}
+                    <span className="block md:hidden">AND CONTENT CREATOR</span>{' '}
+                    <span className="hidden md:block">PHOTOGRAPHER</span>{' '}
                     <span className="hidden md:block">|</span>
-                    <span>VIDEOGRAPHER</span>
-                    <span className="block md:hidden">•</span>{' '}
+                    <span className="hidden md:block">VIDEOGRAPHER</span>
                     <span className="hidden md:block">|</span>
-                    <span>CONTENT CREATOR</span>
+                    <span className="hidden md:block">CONTENT CREATOR</span>
                 </h2>
                 <div
                     data-aos="fade-in"
