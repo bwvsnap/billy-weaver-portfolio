@@ -9,7 +9,6 @@ import Lightbox from '../components/Lightbox';
 
 export const Gallery: React.FC = () => {
     const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
-    const [allTags, setAllTags] = useState<string[]>(['Video']); // Start with 'Video' tag
     const [error, setError] = useState<string | null>(null);
     const [activeTag, setActiveTag] = useState<string>('All');
     const [columnCount, setColumnCount] = useState<number>(4);
@@ -17,6 +16,15 @@ export const Gallery: React.FC = () => {
     const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
         null
     );
+
+    // Hardcoded tags list
+    const hardcodedTags = [
+        'Music',
+        'People',
+        'Adventure',
+        'Commercial',
+        'Video'
+    ];
 
     useEffect(() => {
         const updateColumnCount = () => {
@@ -50,7 +58,14 @@ export const Gallery: React.FC = () => {
                 const extractTagsFromPath = (path: string): string[] => {
                     const pathParts = path.split('/');
                     const tagsPart = pathParts[pathParts.length - 2];
-                    return tagsPart.split('&').map((tag) => tag.trim());
+                    const parsedTags = tagsPart
+                        .split('&')
+                        .map((tag) => tag.trim());
+
+                    // Only include tags that are in the hardcoded tags list
+                    return parsedTags.filter((tag) =>
+                        hardcodedTags.includes(tag)
+                    );
                 };
 
                 // Map image URLs to MediaItems and sort alphabetically by filename
@@ -69,14 +84,9 @@ export const Gallery: React.FC = () => {
                         return bFileName!.localeCompare(aFileName!);
                     });
 
+                // Combine video and image media items
                 const allMediaItems = [...imageMediaItems, ...videoMediaItems];
-                const tagsSet = new Set<string>(['Video']); // Start with 'Video'
 
-                allMediaItems.forEach((item) => {
-                    item.tags.forEach((tag) => tagsSet.add(tag));
-                });
-
-                setAllTags(Array.from(tagsSet).sort());
                 setMediaItems(allMediaItems);
             } catch (error) {
                 if (error instanceof Error) {
@@ -92,6 +102,7 @@ export const Gallery: React.FC = () => {
         return () => window.removeEventListener('resize', updateColumnCount);
     }, []);
 
+    // Filter the media items based on the active tag
     const filteredMedia = mediaItems.filter((item) =>
         activeTag === 'All' ? true : item.tags.includes(activeTag)
     );
@@ -122,7 +133,7 @@ export const Gallery: React.FC = () => {
                     activeTag={activeTag}
                     setActiveTag={setActiveTag}
                 />
-                {allTags.map((tag) => (
+                {hardcodedTags.map((tag) => (
                     <GalleryTag
                         key={tag}
                         tag={tag}
