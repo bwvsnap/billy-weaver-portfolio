@@ -7,9 +7,12 @@ import { MediaItem } from '../interfaces/mediaItem';
 import { FaPlay } from 'react-icons/fa';
 import Lightbox from '../components/Lightbox';
 
-export const Gallery: React.FC = () => {
-    const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
-    const [error, setError] = useState<string | null>(null);
+interface GalleryProps {
+    tags: string[];
+    mediaItems: MediaItem[];
+}
+
+export const Gallery: React.FC<GalleryProps> = ({ tags, mediaItems }) => {
     const [activeTag, setActiveTag] = useState<string>('All');
     const [columnCount, setColumnCount] = useState<number>(4);
     const [lightboxActive, setLightboxActive] = useState<boolean>(false);
@@ -17,88 +20,12 @@ export const Gallery: React.FC = () => {
         null
     );
 
-    // Hardcoded tags list
-    const hardcodedTags = [
-        'Music',
-        'People',
-        'Adventure',
-        'Commercial',
-        'Video'
-    ];
-
     useEffect(() => {
         const updateColumnCount = () => {
             setColumnCount(window.innerWidth < 768 ? 2 : 4);
         };
         updateColumnCount();
         window.addEventListener('resize', updateColumnCount);
-
-        const fetchMediaItems = async () => {
-            try {
-                // Fetch Vimeo videos from the API route
-                const vimeoResponse = await fetch('/api/listVideos');
-                if (!vimeoResponse.ok) {
-                    throw new Error('Failed to fetch Vimeo videos');
-                }
-                const videoMediaItems: MediaItem[] = await vimeoResponse.json();
-
-                // Fetch images
-                const imageResponse = await fetch(
-                    '/api/listFiles?path=PHOTOS/PORTFOLIO',
-                    {
-                        method: 'GET'
-                    }
-                );
-                if (!imageResponse.ok) {
-                    throw new Error('Failed to fetch image files');
-                }
-                const imageData = await imageResponse.json();
-                const fileUrls = imageData.files;
-
-                const extractTagsFromPath = (path: string): string[] => {
-                    const pathParts = path.split('/');
-                    const tagsPart = pathParts[pathParts.length - 2];
-                    const parsedTags = tagsPart
-                        .split('&')
-                        .map((tag) => tag.trim());
-
-                    // Only include tags that are in the hardcoded tags list
-                    return parsedTags.filter((tag) =>
-                        hardcodedTags.includes(tag)
-                    );
-                };
-
-                // Map image URLs to MediaItems and sort alphabetically by filename
-                const imageMediaItems: MediaItem[] = fileUrls
-                    .map((fileUrl: string) => {
-                        const tags = extractTagsFromPath(fileUrl);
-                        return {
-                            type: 'image',
-                            src: fileUrl,
-                            tags
-                        };
-                    })
-                    .sort((a: any, b: any) => {
-                        const aFileName = a.src.split('/').pop();
-                        const bFileName = b.src.split('/').pop();
-                        return bFileName!.localeCompare(aFileName!);
-                    });
-
-                // Combine video and image media items
-                const allMediaItems = [...imageMediaItems, ...videoMediaItems];
-
-                setMediaItems(allMediaItems);
-            } catch (error) {
-                if (error instanceof Error) {
-                    setError(error.message);
-                } else {
-                    setError('An unknown error occurred');
-                }
-            }
-        };
-
-        fetchMediaItems();
-
         return () => window.removeEventListener('resize', updateColumnCount);
     }, []);
 
@@ -133,7 +60,7 @@ export const Gallery: React.FC = () => {
                     activeTag={activeTag}
                     setActiveTag={setActiveTag}
                 />
-                {hardcodedTags.map((tag) => (
+                {tags.map((tag) => (
                     <GalleryTag
                         key={tag}
                         tag={tag}

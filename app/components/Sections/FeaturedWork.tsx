@@ -5,54 +5,15 @@ import { useState, useEffect } from 'react';
 import Lightbox from '../Lightbox';
 import { MediaItem } from '@/app/interfaces/mediaItem';
 
-const FeaturedWork = () => {
+interface FeaturedWorkProps {
+    images: MediaItem[];
+}
+
+const FeaturedWork: React.FC<FeaturedWorkProps> = ({ images }) => {
     const [lightboxActive, setLightboxActive] = useState<boolean>(false);
     const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
         null
     );
-    const [images, setImages] = useState<MediaItem[]>([]);
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const imageResponse = await fetch(
-                    '/api/listFiles?path=PHOTOS/FEATURED WORK',
-                    {
-                        method: 'GET'
-                    }
-                );
-
-                if (!imageResponse.ok) {
-                    throw new Error('Failed to fetch image files');
-                }
-
-                const imageData = await imageResponse.json();
-                const fileUrls = imageData.files;
-
-                // Map file URLs to MediaItems and sort by the last part of the URL (filename)
-                const fetchedImages: MediaItem[] = fileUrls
-                    .map((fileUrl: string) => {
-                        return {
-                            type: 'image',
-                            src: fileUrl,
-                            tags: ['FeaturedImage']
-                        };
-                    })
-                    .sort((a: any, b: any) => {
-                        const aFileName = a.src.split('/').pop();
-                        const bFileName = b.src.split('/').pop();
-                        return aFileName!.localeCompare(bFileName!);
-                    });
-
-                setImages(fetchedImages);
-            } catch (error) {
-                console.error(error);
-                // Handle the error appropriately, e.g., set an error state or show a message to the user
-            }
-        };
-
-        fetchImages();
-    }, []); // Empty dependency array means this effect runs once on mount
 
     const handleImageClick = (index: number) => {
         document.body.classList.add('overflow-hidden');

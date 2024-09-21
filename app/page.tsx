@@ -3,6 +3,8 @@ import Intro from './components/Sections/Intro';
 import Hero from './components/Sections/Hero';
 import HeroBackground from './components/Sections/HeroBackground';
 import { Services } from './components/Sections/Services';
+import { generateFileUrls, listObjects } from '@/lib/r2';
+import { MediaItem } from './interfaces/mediaItem';
 
 // Metadata for SEO
 export const metadata = {
@@ -42,16 +44,9 @@ export const metadata = {
 };
 
 async function fetchHeroImages() {
-    const res = await fetch('/api/listFiles?path=PHOTOS/HERO');
+    const objects = await listObjects('PHOTOS/HERO');
+    const fileUrls = generateFileUrls(objects);
 
-    if (!res.ok) {
-        throw new Error('Failed to fetch image files');
-    }
-
-    const data = await res.json();
-    const fileUrls = data.files as string[];
-
-    // Sort the files by filename
     const sortedFileUrls = fileUrls.sort((a, b) => {
         const aFileName = a.split('/').pop();
         const bFileName = b.split('/').pop();
@@ -61,8 +56,30 @@ async function fetchHeroImages() {
     return sortedFileUrls;
 }
 
+async function fetchFeaturedImages() {
+    const objects = await listObjects('PHOTOS/FEATURED WORK');
+    const fileUrls = generateFileUrls(objects);
+
+    const fetchedImages: MediaItem[] = fileUrls
+        .map((fileUrl: string) => {
+            return {
+                type: 'image',
+                src: fileUrl,
+                tags: ['FeaturedImage']
+            } as MediaItem;
+        })
+        .sort((a: any, b: any) => {
+            const aFileName = a.src.split('/').pop();
+            const bFileName = b.src.split('/').pop();
+            return aFileName!.localeCompare(bFileName!);
+        });
+
+    return fetchedImages;
+}
+
 export default async function Home() {
-    const heroImages = await fetchHeroImages(); // Fetch images on server
+    const heroImages = await fetchHeroImages();
+    const featuredImages = await fetchFeaturedImages();
 
     return (
         <>
@@ -71,9 +88,10 @@ export default async function Home() {
             <div className="w-full flex flex-col items-center px-3 md:px-9">
                 <Hero />
                 <Intro />
-                <FeaturedWork />
+                <FeaturedWork images={featuredImages} />
                 <Services />
             </div>
         </>
     );
 }
+export const revalidate = 86400; // (24 hours)

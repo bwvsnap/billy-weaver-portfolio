@@ -10,13 +10,9 @@ const s3 = new AWS.S3({
     region: 'auto'
 });
 
-// Function to list objects in the R2 bucket with a specific path
-export async function listObjects(
-    bucketName: string,
-    prefix: string
-): Promise<{ Key: string }[]> {
+export async function listObjects(prefix: string): Promise<{ Key: string }[]> {
     const params = {
-        Bucket: bucketName,
+        Bucket: process.env.R2_BUCKET_NAME as string,
         Prefix: prefix
     };
 
@@ -27,4 +23,8 @@ export async function listObjects(
         console.error('Error listing objects: ', err);
         throw err;
     }
+}
+
+export function generateFileUrls(objects: { Key: string }[]): string[] {
+    return objects.map((file) => `${process.env.R2_BUCKET_URL}/${file.Key}`);
 }

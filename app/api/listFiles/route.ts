@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     }
 
     try {
-        const objects = await listObjects(bucketName, path);
+        const objects = await listObjects(path);
         const files = objects.map(
             (file) =>
                 `https://pub-01daa98a97fb4429b38ed6dd8055b991.r2.dev/${file.Key}`
