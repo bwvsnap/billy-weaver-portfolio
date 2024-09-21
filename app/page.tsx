@@ -41,10 +41,33 @@ export const metadata = {
     }
 };
 
-export default function Home() {
+async function fetchHeroImages() {
+    const res = await fetch('/api/listFiles?path=PHOTOS/HERO');
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch image files');
+    }
+
+    const data = await res.json();
+    const fileUrls = data.files as string[];
+
+    // Sort the files by filename
+    const sortedFileUrls = fileUrls.sort((a, b) => {
+        const aFileName = a.split('/').pop();
+        const bFileName = b.split('/').pop();
+        return aFileName!.localeCompare(bFileName!);
+    });
+
+    return sortedFileUrls;
+}
+
+export default async function Home() {
+    const heroImages = await fetchHeroImages(); // Fetch images on server
+
     return (
         <>
-            <HeroBackground />
+            <HeroBackground images={heroImages} />{' '}
+            {/* Pass fetched images to the component */}
             <div className="w-full flex flex-col items-center px-3 md:px-9">
                 <Hero />
                 <Intro />

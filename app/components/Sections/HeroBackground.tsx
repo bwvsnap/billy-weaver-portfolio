@@ -3,40 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './HeroBackground.module.css';
 
-const HeroBackground: React.FC = () => {
+interface HeroBackgroundProps {
+    images: string[];
+}
+
+const HeroBackground: React.FC<HeroBackgroundProps> = ({ images }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [images, setImages] = useState<string[]>([]);
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const response = await fetch(
-                    '/api/listFiles?path=PHOTOS/HERO',
-                    {
-                        method: 'GET'
-                    }
-                );
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch image files');
-                }
-
-                const data = await response.json();
-                const fileUrls = data.files as string[];
-                const sortedFileUrls = fileUrls.sort((a, b) => {
-                    const aFileName = a.split('/').pop();
-                    const bFileName = b.split('/').pop();
-                    return aFileName!.localeCompare(bFileName!);
-                });
-
-                setImages(sortedFileUrls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-        };
-
-        fetchImages();
-    }, []);
 
     useEffect(() => {
         if (images.length === 0) return;
