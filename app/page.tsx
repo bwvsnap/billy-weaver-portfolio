@@ -84,7 +84,6 @@ export default async function Home() {
     return (
         <>
             <HeroBackground images={heroImages} />{' '}
-            {/* Pass fetched images to the component */}
             <div className="w-full flex flex-col items-center px-3 md:px-9">
                 <Hero />
                 <Intro />

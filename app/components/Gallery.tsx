@@ -6,6 +6,7 @@ import { GalleryTag } from '../components/GalleryTag';
 import { MediaItem } from '../interfaces/mediaItem';
 import { FaPlay } from 'react-icons/fa';
 import Lightbox from '../components/Lightbox';
+import AOS from 'aos';
 
 interface GalleryProps {
     tags: string[];
@@ -74,6 +75,10 @@ export const Gallery: React.FC<GalleryProps> = ({ tags, mediaItems }) => {
                     <div key={colIndex} className="flex flex-col gap-4">
                         {getColumns(colIndex).map((item, idx) => (
                             <div
+                                data-aos="fade-in"
+                                data-aos-once="true"
+                                data-aos-duration="800"
+                                data-aos-anchor-placement="top-bottom"
                                 key={idx}
                                 className="w-full relative inline-block cursor-pointer group"
                                 onClick={() =>
@@ -96,6 +101,7 @@ export const Gallery: React.FC<GalleryProps> = ({ tags, mediaItems }) => {
                                         priority={
                                             filteredMedia.indexOf(item) < 8
                                         }
+                                        onLoad={AOS.refresh}
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                                 </div>
