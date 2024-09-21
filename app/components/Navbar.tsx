@@ -152,7 +152,11 @@ const Navbar = () => {
                                 text="Instagram"
                                 large={false}
                             />
-                            <ExternalLink href="/" text="Vimeo" large={false} />
+                            <ExternalLink
+                                href="https://vimeo.com/user39452377"
+                                text="Vimeo"
+                                large={false}
+                            />
 
                             <ExternalLink
                                 href="https://www.linkedin.com/in/billy-weaver-049934152/"

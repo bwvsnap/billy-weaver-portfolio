@@ -143,7 +143,7 @@ export default function About() {
                                 />
                                 <InternalLink
                                     href="/contact"
-                                    text="Get in Touch"
+                                    text="Get In Touch"
                                     large={true}
                                 />
                             </div>
@@ -157,7 +157,7 @@ export default function About() {
                         />
                         <InternalLink
                             href="/contact"
-                            text="Get in Touch"
+                            text="Get In Touch"
                             large={true}
                         />
                     </div>
