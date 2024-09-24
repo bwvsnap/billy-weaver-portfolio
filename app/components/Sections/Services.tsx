@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 const services = [
     {
         title: 'Photography',
-        description: '<p>Bold and intriguing imagery that reflects your or your business&apos; identity.</p>',
+        description: 'Bold and intriguing imagery that reflects your identity.',
         bulletPoints: [
             'Live event coverage',
             'Commercial shoots',
