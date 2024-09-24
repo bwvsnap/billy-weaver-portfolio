@@ -132,7 +132,7 @@ const ContactForm: React.FC = () => {
         {
             id: 'form-name',
             name: 'name',
-            placeholder: 'John Doe',
+            placeholder: '',
             label: "What's your name? *",
             type: 'text',
             component: 'input',
@@ -141,7 +141,7 @@ const ContactForm: React.FC = () => {
         {
             id: 'form-email',
             name: 'email',
-            placeholder: 'john.doe@example.com',
+            placeholder: '',
             label: "What's your email? *",
             type: 'email',
             component: 'input',
@@ -150,7 +150,7 @@ const ContactForm: React.FC = () => {
         {
             id: 'form-company',
             name: 'company',
-            placeholder: 'XYZ Ltd.',
+            placeholder: '',
             label: "What's the name of your organisation?",
             type: 'text',
             component: 'input',
@@ -159,7 +159,7 @@ const ContactForm: React.FC = () => {
         {
             id: 'form-service',
             name: 'service',
-            placeholder: 'Photography, Videography...',
+            placeholder: '',
             label: 'What services are you looking for?',
             type: 'text',
             component: 'input',
@@ -168,7 +168,7 @@ const ContactForm: React.FC = () => {
         {
             id: 'form-message',
             name: 'message',
-            placeholder: "Hi Billy, I'm looking to use your services for...",
+            placeholder: "",
             label: 'Your Message *',
             component: 'textarea',
             rows: 6,
