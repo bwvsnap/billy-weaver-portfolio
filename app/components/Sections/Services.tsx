@@ -10,24 +10,24 @@ import { useEffect, useState } from 'react';
 const services = [
     {
         title: 'Photography',
-        description: 'Bold imagery that speaks for itself.',
+        description: 'Bold and intriguing imagery that reflects your or your business&apos; identity.',
         bulletPoints: [
             'Live event coverage',
-            'Professional, creative portraiture',
             'Commercial shoots',
-            'Retouching,colour correction and precision editing'
+            'Professional, creative portraiture',
+            'Retouching, colour correction and precision editing'
         ],
         software: 'Capture ONE, Adobe Lightroom/Photoshop, Affinity Photo 2',
         Icon: MdCamera
     },
     {
         title: 'Videography',
-        description: 'Transform your vision into stunning visual stories.',
+        description: 'Captivating, cinematic video for a range of applications.',
         bulletPoints: [
-            'Long-form documentary and brand storytelling',
             'Social first content',
-            'Live event capture',
-            'PTZ camera control and live feed switching'
+            'Long-form documentary-style storytelling',
+            'Video editing, colour grading and post-production',
+            'Promotional material with a cinematic touch'
         ],
         software: 'DaVinci Resolve, Premiere Pro',
         Icon: VscRecord
@@ -35,12 +35,12 @@ const services = [
     {
         title: 'Audio',
         description:
-            'Professional sound production for impeccable audio quality.',
+            'Professional audio production for impeccable sound.',
         bulletPoints: [
             'Audio repair and restoration',
-            'Sound design and foley',
-            'Audio production',
-            'Vocal processing'
+            'Sound design',
+            'Mixing & mastering',
+            'Custom scoring and composition'
         ],
         software:
             'Logic Pro X, iZotope RX/Ozone, Fairlight, Soundtoys, FabFilter',
@@ -50,11 +50,11 @@ const services = [
         title: 'Creative Strategy',
         description: 'Ensure your project stays true to your brand and ethos.',
         bulletPoints: [
-            'Content strategy and brand alignment',
-            'Audience-driven content development',
-            'Engagement and reach optimisation',
-            'Brand awareness campaigns',
-            'Pre-prduction logistics and resource management'
+            'Research and conceptual alignment',
+            'Content tailored to brand messaging',
+            'Engagement and reach tactics and optimisation',
+            'Resource management and logistics',
+            'Text & graphics integration'
         ],
         Icon: PiTarget
     }
