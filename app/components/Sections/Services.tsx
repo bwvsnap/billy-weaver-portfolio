@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 const services = [
     {
         title: 'Photography',
-        description: 'Capture moments with clarity and creativity',
+        description: 'Capture moments with clarity and creativity.',
         bulletPoints: [
             'Live event coverage',
             'Professional, creative portraiture',
@@ -22,7 +22,7 @@ const services = [
     },
     {
         title: 'Videography',
-        description: 'Transform your vision into stunning visual stories',
+        description: 'Transform your vision into stunning visual stories.',
         bulletPoints: [
             'Long-form documentary and brand storytelling',
             'Social first content',
@@ -35,7 +35,7 @@ const services = [
     {
         title: 'Audio',
         description:
-            'Professional sound production for impeccable audio quality',
+            'Professional sound production for impeccable audio quality.',
         bulletPoints: [
             'Audio repair and restoration',
             'Sound design and foley',
@@ -48,7 +48,7 @@ const services = [
     },
     {
         title: 'Creative Strategy',
-        description: 'Ensure your project stays true to your brand and ethos',
+        description: 'Ensure your project stays true to your brand and ethos.',
         bulletPoints: [
             'Content strategy and brand alignment',
             'Audience-driven content development',
