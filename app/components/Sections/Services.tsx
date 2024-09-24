@@ -10,12 +10,12 @@ import { useEffect, useState } from 'react';
 const services = [
     {
         title: 'Photography',
-        description: 'Capture moments with clarity and creativity.',
+        description: 'Bold imagery that speaks for itself.',
         bulletPoints: [
             'Live event coverage',
             'Professional, creative portraiture',
             'Commercial shoots',
-            'Retouching and colour correction'
+            'Retouching,colour correction and precision editing'
         ],
         software: 'Capture ONE, Adobe Lightroom/Photoshop, Affinity Photo 2',
         Icon: MdCamera
