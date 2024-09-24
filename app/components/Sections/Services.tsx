@@ -54,7 +54,7 @@ const services = [
             'Audience-driven content development',
             'Engagement and reach optimisation',
             'Brand awareness campaigns',
-            'Storyboarding '
+            'Pre-prduction logistics and resource management'
         ],
         Icon: PiTarget
     }
