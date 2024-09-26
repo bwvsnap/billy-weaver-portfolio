@@ -35,7 +35,7 @@ const Hero = () => {
                     <span className="hidden md:block">|</span>
                     <span className="hidden md:block">VIDEOGRAPHER</span>
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">CONTENT CREATOR</span>
+                    <span className="hidden md:block"></span>
                 </h2>
                 <div
                     data-aos="fade-in"
