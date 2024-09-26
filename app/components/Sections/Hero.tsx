@@ -30,7 +30,7 @@ const Hero = () => {
                     <span className="block md:hidden">
                         PHOTOGRAPHER, VIDEOGRAPHER
                     </span>{' '}
-                    <span className="block md:hidden">AND CONTENT CREATOR</span>{' '}
+                    <span className="block md:hidden"></span>{' '}
                     <span className="hidden md:block">PHOTOGRAPHER</span>{' '}
                     <span className="hidden md:block">|</span>
                     <span className="hidden md:block">VIDEOGRAPHER</span>
