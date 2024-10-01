@@ -106,3 +106,12 @@
         opacity: 0;
     }
 }
+
+.link .inline-block {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    line-height: normal;
+}
