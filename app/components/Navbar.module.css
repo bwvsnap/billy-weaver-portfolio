@@ -100,11 +100,3 @@
         opacity: 0;
     }
 }
-
-.inline-block {
-    display: inline-flex;
-    align-items: center;
-    margin-left: 5px;
-    padding: 0;
-    height: auto;
-}
