@@ -101,11 +101,10 @@
     }
 }
 
-.link .inline-block {
+.inline-block {
     display: inline-flex;
     align-items: center;
-    margin: 0;
+    margin-left: 5px;
     padding: 0;
     height: auto;
-    line-height: normal;
 }
