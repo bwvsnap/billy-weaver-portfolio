@@ -138,6 +138,16 @@ const Navbar = () => {
                                 delay={textDelay}
                             />
                         </div>
+                         <div
+                            onClick={() => handleClick()}
+                            className={`${styles.linkContainer} cursor-pointer`}
+                        >
+                            <ShopNavLink
+                                text="PRICE LIST"
+                                href="/services"
+                                delay={textDelay}
+                            />
+                        </div>
                     </div>
                     <div
                         className={`${
