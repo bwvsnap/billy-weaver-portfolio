@@ -144,7 +144,7 @@ const Navbar = () => {
                         >
                             <ShopNavLink
                                 text="PRICE LIST"
-                                href="https://billyweaver.co.uk/PDF Test.pdf"
+                                href="https://billyweaver.co.uk/pdf-test.pdf"
                                 delay={textDelay}
                             />
                         </div>
