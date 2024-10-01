@@ -13,7 +13,7 @@
 
 .text-stroke-hover {
     -webkit-text-stroke: 1px rgb(245 245 244);
-    color: rgb(245 245 244);
+    color: rgb(245, 245, 244);
 }
 
 .fadeIn {
@@ -76,5 +76,22 @@
 
     .backface-hidden {
         backface-visibility: hidden;
+    }
+
+    /* Additional styles for the pricing section */
+    .pricing-card {
+        @apply bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105;
+    }
+
+    .pricing-title {
+        @apply text-xl font-semibold mb-2;
+    }
+
+    .pricing-price {
+        @apply text-lg text-gray-800 mb-4;
+    }
+
+    .pricing-description {
+        @apply text-gray-600;
     }
 }
