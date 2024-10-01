@@ -37,8 +37,8 @@ export const ShopNavLink: React.FC<NavLinkProps> = ({ text, href, delay }) => {
                     delay ? styles.originalTextOpened : ''
                 }`}
             >
-                {text}{' '}
-                <span className="inline-block">
+                {text}
+                <span className="inline-block" style={{ verticalAlign: 'middle' }}>  
                     <MdArrowOutward />
                 </span>
             </span>
@@ -47,8 +47,8 @@ export const ShopNavLink: React.FC<NavLinkProps> = ({ text, href, delay }) => {
                     delay ? styles.textDelay : ''
                 } text-green-500`}
             >
-                {text}{' '}
-                <span className="inline-block">
+                {text}
+                <span className="inline-block" style={{ verticalAlign: 'middle' }}>  
                     <MdArrowOutward />
                 </span>
             </span>
