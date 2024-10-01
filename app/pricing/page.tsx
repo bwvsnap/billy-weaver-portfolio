@@ -1,39 +1,56 @@
-import React from 'react';
+import React from "react";
 
-interface PricingTableProps {
-}
-
-const PricingTable: React.FC<PricingTableProps> = () => {
+const Pricing = () => {
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-300">
-        <thead>
-          <tr>
-            <th className="py-3 px-6 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-              Service
-            </th>
-            <th className="py-3 px-6 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-              Price
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="py-4 px-6 border-b border-gray-300">Photography</td>
-            <td className="py-4 px-6 border-b border-gray-300">£500</td>
-          </tr>
-          <tr>
-            <td className="py-4 px-6 border-b border-gray-300">Videography</td>
-            <td className="py-4 px-6 border-b border-gray-300">£700</td>
-          </tr>
-          <tr>
-            <td className="py-4 px-6 border-b border-gray-300">Content Creation</td>
-            <td className="py-4 px-6 border-b border-gray-300">£400</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold text-center mb-8">Pricing</h1>
+      
+      {/* Packages Section */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Packages</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { title: "Portrait Photography", price: "£200", description: "Includes a 2-hour shoot and 10 edited photos." },
+            { title: "Music Videos", price: "£500", description: "Includes a 4-hour shoot and full editing." },
+            { title: "Commercial Promo", price: "£300", description: "Includes a 3-hour shoot and promotional edits." },
+          ].map((packageItem, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105"
+            >
+              <h3 className="text-xl font-semibold mb-2">{packageItem.title}</h3>
+              <p className="text-lg text-gray-800 mb-4">{packageItem.price}</p>
+              <p className="text-gray-600">{packageItem.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Rates Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Rates</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { title: "Photography", rates: ["Hourly: £75", "Half-day: £250", "Full day: £400"] },
+            { title: "Filming", rates: ["Hourly: £100", "Half-day: £350", "Full day: £600"] },
+            { title: "Video Editing", rates: ["Hourly: £50", "Half-day: £150", "Full day: £250"] },
+          ].map((service, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105"
+            >
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <ul className="list-disc pl-5">
+                {service.rates.map((rate, idx) => (
+                  <li key={idx} className="text-gray-600">{rate}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
 
-export default PricingTable;
+export default Pricing;
