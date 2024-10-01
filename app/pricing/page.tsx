@@ -14,13 +14,10 @@ const Pricing = () => {
             { title: "Music Videos", price: "£500", description: "Includes a 4-hour shoot and full editing." },
             { title: "Commercial Promo", price: "£300", description: "Includes a 3-hour shoot and promotional edits." },
           ].map((packageItem, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105"
-            >
-              <h3 className="text-xl font-semibold mb-2">{packageItem.title}</h3>
-              <p className="text-lg text-gray-800 mb-4">{packageItem.price}</p>
-              <p className="text-gray-600">{packageItem.description}</p>
+            <div key={index} className="pricing-card">
+              <h3 className="pricing-title">{packageItem.title}</h3>
+              <p className="pricing-price">{packageItem.price}</p>
+              <p className="pricing-description">{packageItem.description}</p>
             </div>
           ))}
         </div>
@@ -35,11 +32,8 @@ const Pricing = () => {
             { title: "Filming", rates: ["Hourly: £100", "Half-day: £350", "Full day: £600"] },
             { title: "Video Editing", rates: ["Hourly: £50", "Half-day: £150", "Full day: £250"] },
           ].map((service, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105"
-            >
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+            <div key={index} className="pricing-card">
+              <h3 className="pricing-title">{service.title}</h3>
               <ul className="list-disc pl-5">
                 {service.rates.map((rate, idx) => (
                   <li key={idx} className="text-gray-600">{rate}</li>
