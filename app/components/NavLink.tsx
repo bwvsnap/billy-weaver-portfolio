@@ -31,7 +31,7 @@ export const NavLink: React.FC<NavLinkProps> = ({ text, href, delay }) => {
 
 export const ShopNavLink: React.FC<NavLinkProps> = ({ text, href, delay }) => {
     return (
-        <Link href={href} className={styles.link}>
+        <Link href={href} className={styles.link} target="_blank" rel="noopener noreferrer">
             <span
                 className={`${styles.text} ${styles.originalText} ${
                     delay ? styles.originalTextOpened : ''
