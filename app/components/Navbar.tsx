@@ -139,17 +139,6 @@ const Navbar = () => {
                             />
                         </div>
                          <div
-                            onClick={() => handleClick()}
-                            className={`${styles.linkContainer} cursor-pointer`}
-                        >
-                            <ShopNavLink
-                                text="PRICE LIST"
-                                href="https://billyweaver.co.uk/pdf-test.pdf"
-                                delay={textDelay}
-                            />
-                        </div>
-                    </div>
-                    <div
                         className={`${
                             textDelay
                                 ? styles.externalLinkFadeIn
