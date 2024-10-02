@@ -138,7 +138,8 @@ const Navbar = () => {
                                 delay={textDelay}
                             />
                         </div>
-                         <div
+                    </div>
+                    <div
                         className={`${
                             textDelay
                                 ? styles.externalLinkFadeIn
