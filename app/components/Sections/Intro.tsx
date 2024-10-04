@@ -27,18 +27,38 @@ const Intro = () => {
                 <span className="font-semibold text-stone-100">
                     videographer
                 </span>{' '}
-                working mainly in{' '}
+                . Working mainly in{' '}
                 <span className="font-semibold text-stone-100">events</span> and{' '}
                 <span className="font-semibold text-stone-100">
                     content-creation
                 </span>{' '}
-                , helping brands, artists, and business owners{' '}
+                , I help artists, companies and business owners{' '}
                 <span className="font-semibold text-stone-100">
-                    enahance their identity
+                    enhance their brand identity
                 </span>{' '}
                 with{' '}
                 <span className="font-semibold text-stone-100">
                     compelling visual media
+                </span>{' '}
+                and{' '}
+                <span className="font-semibold text-stone-100">
+                    tailored digital strategy
+                </span>{' '}
+                Over the years, I&apos;ve had the chance to refine my skills both{' '}
+                <span className="font-semibold text-stone-100">
+                    behind the camera
+                </span>{' '}
+                and in the{' '}
+                <span className="font-semibold text-stone-100">
+                    studio, capturing moments
+                </span>{' '}
+                as they unfold and then{' '}
+                <span className="font-semibold text-stone-100">
+                    shaping
+                </span>{' '}
+                them into
+                <span className="font-semibold text-stone-100">
+                    polishing, engaging visuals
                 </span>{' '}
                 . It all began in 2007, with a small compact camera…
             </p>
