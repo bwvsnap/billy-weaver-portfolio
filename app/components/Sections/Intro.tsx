@@ -27,7 +27,7 @@ const Intro = () => {
                 <span className="font-semibold text-stone-100">
                     videographer
                 </span>
-                . Working mainly in{' '}
+                . Working poo in{' '}
                 <span className="font-semibold text-stone-100">events</span> and{' '}
                 <span className="font-semibold text-stone-100">
                     content-creation
