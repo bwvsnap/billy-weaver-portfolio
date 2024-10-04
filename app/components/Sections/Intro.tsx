@@ -58,7 +58,7 @@ const Intro = () => {
                 </span>{' '}
                 them into
                 <span className="font-semibold text-stone-100">
-                    {' '}polishing, engaging visuals
+                    {' '}polished, engaging visuals
                 </span>
                 . It all began in 2007, with a small compact camera…
             </p>
