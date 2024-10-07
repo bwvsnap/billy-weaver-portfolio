@@ -30,7 +30,7 @@ const Intro = () => {
                 . Working mainly in{' '}
                 <span className="font-semibold text-stone-100">events</span> and{' '}
                 <span className="font-semibold text-stone-100">
-                    content-creation
+                    content creation
                 </span>
                 , I help artists, companies and business owners{' '}
                 <span className="font-semibold text-stone-100">
@@ -50,7 +50,11 @@ const Intro = () => {
                 </span>{' '}
                 and in the{' '}
                 <span className="font-semibold text-stone-100">
-                    studio, capturing moments
+                    studio
+                </span>
+                ,{' '}
+                <span className="font-semibold text-stone-100">
+                    capturing moments
                 </span>{' '}
                 as they unfold and then{' '}
                 <span className="font-semibold text-stone-100">
@@ -58,7 +62,11 @@ const Intro = () => {
                 </span>{' '}
                 them into
                 <span className="font-semibold text-stone-100">
-                    {' '}polished, engaging visuals
+                    {' '}polished
+                </span>
+                ,
+                <span className="font-semibold text-stone-100">
+                    {' '}engaging visuals
                 </span>
                 . It all began in 2007, with a small compact camera…
             </p>
