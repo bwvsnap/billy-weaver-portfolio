@@ -31,11 +31,11 @@ const Hero = () => {
                         PHOTOGRAPHER, VIDEOGRAPHER
                     </span>{' '}
                     <span className="block md:hidden">AND CONTENT CREATOR</span>{' '}
-                    <span className="hidden md:block">PHOTOGRAPHER</span>{' '}
+                    <span className="hidden md:block">VISUAL CREATOR</span>{' '}
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">VIDEOGRAPHER</span>
+                    <span className="hidden md:block">PRODUCER</span>
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">CONTENT CREATOR</span>
+                    <span className="hidden md:block">CREATIVE STRATEGIST</span>
                 </h2>
                 <div
                     data-aos="fade-in"
