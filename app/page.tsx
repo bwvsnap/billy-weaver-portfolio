@@ -3,7 +3,6 @@ import Intro from './components/Sections/Intro';
 import Hero from './components/Sections/Hero';
 import HeroBackground from './components/Sections/HeroBackground';
 import { Services } from './components/Sections/Services';
-import { Pricing } from './components/Sections/Pricing'; // Import your Pricing component
 import { generateFileUrls, listObjects } from '@/lib/r2';
 import { MediaItem } from './interfaces/mediaItem';
 
@@ -90,7 +89,6 @@ export default async function Home() {
                 <Intro />
                 <FeaturedWork images={featuredImages} />
                 <Services />
-                <Pricing /> {/* Add the Pricing section here */}
             </div>
         </>
     );
