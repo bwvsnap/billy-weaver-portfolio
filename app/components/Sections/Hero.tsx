@@ -28,7 +28,7 @@ const Hero = () => {
                     className="w-full flex flex-col md:flex-row justify-between xl:px-1 2xl:px-[0.3rem] text-stone-100  drop-shadow-2xl  font-monument font-bold text-center text-xs md:text-xs xl:text-2xl 2xl:text-[2rem]"
                 >
                     <span className="block md:hidden">
-                        VISUAL CREATER, PRODUCER
+                        VISUAL CREATOR, PRODUCER
                     </span>{' '}
                     <span className="block md:hidden">AND CREATIVE STRATEGIST</span>{' '}
                     <span className="hidden md:block">VISUAL CREATOR</span>{' '}
