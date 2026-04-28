@@ -163,7 +163,7 @@ const Footer = () => {
                         </h4>
                         <div className="mb-8 flex flex-row gap-2 md:gap-3">
                             <ExternalLink
-                                href="https://www.instagram.com/billyweavervisuals/"
+                                href="https://www.instagram.com/weavemedia.studio/"
                                 text="Instagram"
                                 large={false}
                             />
@@ -173,7 +173,7 @@ const Footer = () => {
                                 large={false}
                             />
                             <ExternalLink
-                                href="https://www.linkedin.com/in/billy-weaver-049934152/"
+                                href="https://www.linkedin.com/company/weave-media-studio"
                                 text="LinkedIn"
                                 large={false}
                             />
