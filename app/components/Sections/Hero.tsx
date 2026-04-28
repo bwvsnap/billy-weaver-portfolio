@@ -30,12 +30,12 @@ const Hero = () => {
                     <span className="block md:hidden">
                         PHOTOGRAPHY, VIDEOGRAPHY
                     </span>{' '}
-                    <span className="block md:hidden">AND CREATIVE STRATEGY</span>{' '}
-                    <span className="hidden md:block">RUN ON INSTINCT</span>{' '}
+                    <span className="block md:hidden">AND CONTENT CREATION</span>{' '}
+                    <span className="hidden md:block">PHOTOGRAPHY</span>{' '}
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">BUILT WITH CONVICTION</span>
+                    <span className="hidden md:block">VIDEOGRAPHY</span>
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">DEEPLY HUMAN</span>
+                    <span className="hidden md:block">CONTENT CREATION</span>
                 </h2>
                 <div
                     data-aos="fade-in"
