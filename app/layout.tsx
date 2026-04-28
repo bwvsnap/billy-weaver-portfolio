@@ -30,9 +30,9 @@ const monument = localFont({
 });
 
 export const metadata: Metadata = {
-    title: 'Billy Weaver',
+    title: 'Weave Media',
     description:
-        'Billy Weaver - professional photography, videography, sound & editing services'
+        'Weave Media - professional photography, videography, sound & editing services'
 };
 
 export default function RootLayout({
