@@ -47,7 +47,7 @@ const Hero = () => {
                 >
                     <InternalLink
                         href={'/portfolio'}
-                        text={'See My Work'}
+                        text={'See Work'}
                         large={true}
                     />
                 </div>{' '}
