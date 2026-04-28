@@ -83,8 +83,8 @@ const Navbar = () => {
                                 : 'opacity-100'
                         } `}
                     >
-                        <span className="md:hidden">BW</span>
-                        <span className="hidden md:inline">BILLY WEAVER</span>
+                        <span className="md:hidden">WM</span>
+                        <span className="hidden md:inline">WEAVE MEDIA</span>
                     </h3>
                 </Link>
 
