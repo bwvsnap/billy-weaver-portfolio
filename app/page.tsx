@@ -8,28 +8,28 @@ import { MediaItem } from './interfaces/mediaItem';
 
 // Metadata for SEO
 export const metadata = {
-    title: 'Billy Weaver | Photographer & Videographer in Manchester',
+    title: 'Weave Media | Photography & Videography in Manchester, UK',
     description:
         'Documentary-style photographer and videographer based in Manchester UK, blending classic techniques with experimentation to bring ideas and stories to life through compelling visual imagery.',
     openGraph: {
-        title: 'Billy Weaver | Photographer & Videographer in Manchester, UK',
+        title: 'Weave Media | Photographey & Videographey in Manchester, UK',
         description:
             'Documentary-style photographer and videographer based in Manchester UK, blending classic techniques with experimentation to bring ideas and stories to life through compelling visual imagery.',
-        url: 'https://billyweaver.co.uk',
+        url: 'https://weavemedia.studio',
         images: [
             {
                 url: 'https://billyweaver.co.uk/images/billy.jpg',
                 width: 700,
                 height: 1000,
-                alt: 'Billy Weaver Photography Portfolio'
+                alt: 'Weave Media Photography Portfolio'
             }
         ],
-        site_name: 'Billy Weaver'
+        site_name: 'Weave Media'
     },
     twitter: {
         card: 'summary_large_image',
         site: '@billyweaver',
-        title: 'Billy Weaver | Photographer & Videographer in Manchester, UK',
+        title: 'Weave Media | Photography & Videography in Manchester, UK',
         description:
             'Documentary-style photographer and videographer based in Manchester UK, blending classic techniques with experimentation to bring ideas and stories to life through compelling visual imagery.',
         images: ['https://billyweaver.co.uk/images/billy.jpg']
