@@ -35,7 +35,7 @@ const Intro = () => {
                 <span className="font-semibold text-stone-100">
                     content production
                 </span>
-                . I help artists, comapnies and business owners{' '}
+                . I help artists, companies and business owners{' '}
                 <span className="font-semibold text-stone-100">
                     elevate
                 </span>{' '}
@@ -54,7 +54,7 @@ const Intro = () => {
                 and shaping them into{' '}
                 <span className="font-semibold text-stone-100">
                     polished, engaging
-                </span>
+                </span>{' '}
                 visuals. It all began in 2007, with a small compact camera…
             </p>
             <div
