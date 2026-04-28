@@ -10,7 +10,7 @@ const Intro = () => {
                 data-aos-duration="800"
                 className="text-center font-monument text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl w-full font-bold"
             >
-                ABOUT ME
+                ABOUT
             </h2>
 
             <p
@@ -19,48 +19,43 @@ const Intro = () => {
                 data-aos-duration="800"
                 className="md:w-3/4 2xl:w-4/5 text-base md:text-2xl 2xl:text-4xl md:leading-[2.4rem] 2xl:leading-[2.8rem] text-stone-400 text-center"
             >
-                Hi! I’m Billy, a{' '}
+                I&apos;m Billy, founder of{' '}
                 <span className="font-semibold text-stone-100">
-                    documentary-style photographer
+                    Weave Media
+                </span>{' '}
+                - a{' '}
+                <span className="font-semibold text-stone-100">
+                    documentary-style
+                </span>{' '}
+                photo and video studio working across{' '}
+                <span className="font-semibold text-stone-100">
+                    events
                 </span>{' '}
                 and{' '}
                 <span className="font-semibold text-stone-100">
-                    videographer
+                    content production
                 </span>
-                . Working mainly in{' '}
-                <span className="font-semibold text-stone-100">events</span> and{' '}
+                . I help artists, comapnies and business owners{' '}
                 <span className="font-semibold text-stone-100">
-                    content-creation
+                    elevate
+                </span>{' '}
+                their brand with{' '}
+                <span className="font-semibold text-stone-100">
+                    compelling
+                </span>{' '}
+                visual media and{' '}
+                <span className="font-semibold text-stone-100">
+                    tailored
+                </span>{' '}
+                digital strategy, capturing moments{' '}
+                <span className="font-semibold text-stone-100">
+                    as they unfold
+                </span>{' '}
+                and shaping them into{' '}
+                <span className="font-semibold text-stone-100">
+                    polished, engaging
                 </span>
-                , I help artists, companies and business owners{' '}
-                <span className="font-semibold text-stone-100">
-                    enhance their brand identity
-                </span>{' '}
-                with{' '}
-                <span className="font-semibold text-stone-100">
-                    compelling visual media
-                </span>{' '}
-                and{' '}
-                <span className="font-semibold text-stone-100">
-                    tailored digital strategy
-                </span>
-                . Over the years, I&apos;ve had the chance to refine my skills both{' '}
-                <span className="font-semibold text-stone-100">
-                    behind the camera
-                </span>{' '}
-                and in the{' '}
-                <span className="font-semibold text-stone-100">
-                    studio, capturing moments
-                </span>{' '}
-                as they unfold and then{' '}
-                <span className="font-semibold text-stone-100">
-                    shaping
-                </span>{' '}
-                them into{' '}
-                <span className="font-semibold text-stone-100">
-                    polished, engaging visuals
-                </span>
-                . It all began in 2007, with a small compact camera…
+                visuals. It all began in 2007, with a small compact camera…
             </p>
             <div
                 data-aos="fade-in"
