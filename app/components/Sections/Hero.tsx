@@ -16,7 +16,7 @@ const Hero = () => {
                     className="w-full relative z-10"
                 >
                     <h1 className="w-full flex flex-row justify-between text-center font-monument text-stone-100 drop-shadow-2xl font-bold text-3xl md:text-5xl xl:text-8xl 2xl:text-9xl text-stroke-hover transition-all duration-1000 ease-in cursor-default">
-                        <span>BILLY</span> <span>WEAVER</span>
+                        <span>WEAVE</span> <span>MEDIA</span>
                     </h1>
                 </div>
                 <h2
@@ -31,11 +31,11 @@ const Hero = () => {
                         PHOTOGRAPHY, VIDEOGRAPHY
                     </span>{' '}
                     <span className="block md:hidden">AND CREATIVE STRATEGY</span>{' '}
-                    <span className="hidden md:block">PHOTOGRAPHY</span>{' '}
+                    <span className="hidden md:block">RUN ON INSTINCT</span>{' '}
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">VIDEOGRAPHY</span>
+                    <span className="hidden md:block">BUILT WITH CONVICTION</span>
                     <span className="hidden md:block">|</span>
-                    <span className="hidden md:block">CREATIVE STRATEGY</span>
+                    <span className="hidden md:block">DEEPLY HUMAN</span>
                 </h2>
                 <div
                     data-aos="fade-in"
