@@ -97,7 +97,7 @@ async function fetchImages() {
         .sort((a: any, b: any) => {
             const aFileName = a.src.split('/').pop();
             const bFileName = b.src.split('/').pop();
-            return bFileName!.localeCompare(aFileName!);
+            return aFileName!.localeCompare(bFileName!);
         });
 
     return imageMediaItems;
