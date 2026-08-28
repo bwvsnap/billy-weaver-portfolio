@@ -84,7 +84,6 @@ const extractTagsFromPath = (path: string): string[] => {
 async function fetchImages() {
     const objects = await listObjects('PHOTOS/PORTFOLIO');
     const fileUrls = generateFileUrls(objects);
-
     const imageMediaItems: MediaItem[] = fileUrls
         .map((fileUrl: string) => {
             const tags = extractTagsFromPath(fileUrl);
@@ -94,12 +93,12 @@ async function fetchImages() {
                 tags
             } as MediaItem;
         })
+        .filter((item) => item.tags.length > 0)
         .sort((a: any, b: any) => {
             const aFileName = a.src.split('/').pop();
             const bFileName = b.src.split('/').pop();
             return aFileName!.localeCompare(bFileName!);
         });
-
     return imageMediaItems;
 }
 
